@@ -1,0 +1,12 @@
+# robots.txt — MortgagePro
+# All search engines are welcome to crawl the public site.
+
+User-agent: *
+Allow: /
+
+# Block nothing important; keep site fully crawlable.
+Disallow: /script.js
+Disallow: /styles.css
+
+# Sitemap location — update YOUR_USERNAME below
+Sitemap: https://YOUR_USERNAME.github.io/mortgage-pro/sitemap.xml
