@@ -9,4 +9,4 @@ Disallow: /script.js
 Disallow: /styles.css
 
 # Sitemap location — update YOUR_USERNAME below
-Sitemap: https://YOUR_USERNAME.github.io/mortgage-pro/sitemap.xml
+Sitemap: https://hubelectric330-afk.github.io/mortgage-pro/sitemap.xml
