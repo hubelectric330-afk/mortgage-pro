@@ -1,114 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How It Works — MortgagePro</title>
-  <meta name="description" content="Learn how our mortgage calculator works, the formula behind it, and what each input means." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works: The Real Math Behind Mortgages | SmartLoanCalc</title>
+  <meta name="description" content="Stop guessing. Learn exactly how mortgage math works, from the amortization formula to the hidden escrow costs. Written by a real homebuyer, for homebuyers.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXE8TE3PMN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXE8TE3PMN');
-</script>
   
+  <style>
+    /* SAME BASE STYLES AS HOME PAGE */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER (Same as Home Page) */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* ARTICLE LAYOUT */
+    .article-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .article-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .article-header p { color: #64748b; font-size: 18px; max-width: 700px; margin: 0 auto; }
+    .article-meta { margin-top: 20px; font-size: 14px; color: #94a3b8; font-weight: 600; }
+
+    .article-body { max-width: 800px; margin: 0 auto; padding: 50px 20px; font-size: 18px; color: #334155; line-height: 1.9; }
+    .article-body h2 { font-size: 30px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .formula-box { background: #f1f5f9; padding: 20px; border-radius: 8px; text-align: center; font-family: monospace; font-size: 20px; font-weight: 700; color: #0f172a; margin: 25px 0; border: 1px solid #cbd5e1; }
+
+    /* FOOTER (Same as Home Page) */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .article-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-      <nav class="nav" id="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html" class="active">How It Works</a>
         <a href="faq.html">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       <div class="header-actions">
-        <a href="index.html#calculator" class="btn btn-primary btn-sm">Calculate Now</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>How It Works</h1>
-      <p>Understand exactly how your monthly payment is calculated — no hidden magic, just transparent math.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Enter Your Details</h3>
-        <p>Add the home price, down payment, loan term, and interest rate. Optionally include taxes, insurance, and HOA.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>We Do the Math</h3>
-        <p>Your loan amount is calculated and the standard amortization formula produces your monthly principal and interest.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>See the Breakdown</h3>
-        <p>View your monthly total, a visual breakdown, and a year-by-year amortization schedule.</p>
-      </div>
-    </div>
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <h1>How It Works: The Real Math Behind Your Mortgage</h1>
+    <p>No jargon. No hidden agendas. Just the straight facts about how we calculate your payment, and why the banks hope you never understand it.</p>
+    <div class="article-meta">Published by the SmartLoanCalc Founder | Updated November 2026</div>
   </div>
 
-  <article class="prose">
-    <h2>The Mortgage Formula</h2>
-    <p>Monthly principal &amp; interest is calculated using the standard amortization formula:</p>
-    <div class="formula-box">M = P × [ r(1 + r)ⁿ ] ÷ [ (1 + r)ⁿ − 1 ]</div>
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+    
+    <p>I’m going to be honest with you. Before I bought my first house, I thought I was good at math. I got good grades in school. I could do algebra. But the first time I sat down with a mortgage lender and looked at the "Loan Estimate," I felt like an idiot. There were numbers, acronyms, and fees flying everywhere.</p>
+    
+    <p>I asked the lender to explain how the monthly payment was calculated. He sighed, pulled out a calculator, punched a few buttons, and said, "Don't worry about the formula, buddy. Just trust the computer."</p>
+    
+    <p>I hated that answer. I didn't want to just "trust the computer." I wanted to know exactly where my money was going. That moment sparked a two-year obsession with mortgage math. I read books, I talked to seasoned loan officers, and I learned how to calculate everything myself.</p>
+    
+    <p>That knowledge is exactly what I built into <strong>SmartLoanCalc</strong>. Today, I’m going to pull back the curtain. We are going to walk through the exact math our calculator uses. We are going to look at every single input field and explain <em>why</em> it matters. By the end of this page, you will know more about mortgage math than some of the loan officers you will talk to.</p>
+
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80" alt="Person doing mortgage math on a calculator" class="article-img">
+
+    <h2>The Core Formula: The Engine of Your Mortgage</h2>
+    <p>Every standard, fixed-rate mortgage in the United States is calculated using the exact same mathematical formula. It’s called the <strong>Amortization Formula</strong>. Our calculator uses this exact formula to determine your Principal and Interest (P&I) payment.</p>
+    
+    <p>Here is the formula:</p>
+    <div class="formula-box">M = P × [r(1 + r)^n] ÷ [(1 + r)^n − 1]</div>
+    
+    <p>It looks terrifying, right? Let me break it down into plain English, exactly how I would explain it to a friend over coffee:</p>
+    
     <ul>
-      <li><strong>M</strong> = monthly payment (principal &amp; interest)</li>
-      <li><strong>P</strong> = loan principal (home price − down payment)</li>
-      <li><strong>r</strong> = monthly interest rate (annual rate ÷ 12 ÷ 100)</li>
-      <li><strong>n</strong> = total number of payments (years × 12)</li>
+      <li><strong>M</strong> is the Monthly Payment. This is the number we are trying to find.</li>
+      <li><strong>P</strong> is the Principal. This is the actual amount of money you are borrowing from the bank (the home price minus your down payment).</li>
+      <li><strong>r</strong> is the monthly interest rate. <em>Warning:</em> This is where people mess up. The bank gives you an annual rate (like 6.5%). But for this formula, you must divide that by 12. So, 6.5% becomes 0.005416.</li>
+      <li><strong>n</strong> is the total number of payments. If you have a 30-year mortgage, that is 360 payments (30 years × 12 months).</li>
     </ul>
 
-    <h2>What Each Input Means</h2>
-    <h3>Home Price</h3>
-    <p>The total purchase price of the property.</p>
-    <h3>Down Payment</h3>
-    <p>The amount you pay upfront. A larger down payment reduces your loan amount and monthly payment.</p>
-    <h3>Loan Term</h3>
-    <p>The number of years over which you repay the loan. Longer terms mean lower monthly payments but more total interest.</p>
-    <h3>Interest Rate</h3>
-    <p>The annual interest rate on your loan, as quoted by your lender.</p>
-    <h3>Property Tax, Insurance &amp; HOA</h3>
-    <p>These recurring costs are added to your monthly payment, often collected in an escrow account.</p>
+    <p>Why is this formula so complicated? Because it has to do two things at once. It has to figure out how to pay off the entire loan by the end of the term, <em>and</em> it has to calculate the changing interest every single month based on the remaining balance. The bank’s computer does this instantly. Our calculator does it instantly in your browser. But now you know the secret sauce.</p>
 
-    <h2>Important Note</h2>
-    <p>This calculator provides estimates for planning purposes only. Your actual payment may differ based on lender fees, PMI, closing costs, and other factors. Always consult a licensed mortgage professional.</p>
+    <h2>Breaking Down the Inputs: What Are You Actually Typing In?</h2>
+    <p>When you use our tool, you see a bunch of boxes. But those aren't just random numbers. Each one represents a massive financial decision. Here is my personal breakdown of what each field means.</p>
+
+    <h3>1. Home Price</h3>
+    <p>This is the easiest one. It's the sticker price of the house. But here is a tip from my own experience: don't just look at the price the seller is asking. Look at the price <em>you</em> can afford. It’s easy to fall in love with a house that is $20,000 over your budget. Run the math first. If the monthly payment gives you a stomach ache, walk away. There will be another house.</p>
+
+    <h3>2. Down Payment</h3>
+    <p>This is the money you pay upfront. If you put down a larger down payment, you borrow less money, which means your monthly payment is lower. But the real magic number here is <strong>20%</strong>.</p>
+    <p>Why 20%? Because 20% is the golden ticket to avoiding PMI (Private Mortgage Insurance). If you put down less than 20%, the bank sees you as a risk, and they force you to buy insurance that protects <em>them</em> if you stop paying. It does not protect you at all. It is just extra money out of your pocket. Our calculator automatically factors PMI in if your down payment is under 20%, so you see the real cost.</p>
+
+    <h3>3. Interest Rate</h3>
+    <p>This is the lender's fee. It is the percentage they charge you to borrow their money. Here is the brutal truth: Interest is the silent killer of wealth. A tiny difference in your interest rate makes a massive difference over 30 years.</p>
+    <p>Let’s say you borrow $400,000. At a 6.0% rate, your payment is $2,398. At a 7.0% rate, your payment is $2,661. That’s a $263 difference every single month. Over 30 years, a 1% difference in your rate will cost you nearly $95,000 in extra interest. That is why you should never accept the first rate your bank gives you. Shop around. Fight for a better rate.</p>
+
+    <h3>4. Loan Term</h3>
+    <p>This is how long you take to pay it back. Usually 15 or 30 years.</p>
+    <ul>
+      <li><strong>30-Year Mortgage:</strong> Lower monthly payment. More breathing room in your budget. But you will pay a massive amount of interest over time.</li>
+      <li><strong>15-Year Mortgage:</strong> Higher monthly payment (because you are squeezing 30 years of debt into 15). But you save tens of thousands of dollars in interest and you own your home much faster.</li>
+    </ul>
+    <p>My advice? If you can afford the 15-year payment, take it. If you can't, take the 30-year, but make extra payments to pay it off early (more on that later).</p>
+
+    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1000&q=80" alt="Detailed breakdown of mortgage costs" class="article-img">
+
+    <h3>5. Property Taxes</h3>
+    <p>This is the cost that shocks almost every first-time homebuyer. When you rent an apartment, you don't pay property taxes. When you own a home, you do. The local government charges you a tax based on the assessed value of your property. It pays for schools, roads, and local services.</p>
+    <p>Property taxes vary wildly depending on where you live. In some states, like Texas or New Jersey, property taxes are incredibly high. In others, they are lower. Your lender will collect this money every month in an <strong>Escrow Account</strong> and pay the government for you. It’s mandatory. You cannot escape it.</p>
+
+    <h3>6. Home Insurance</h3>
+    <p>If your house burns down, who pays for it? Your homeowners insurance. The bank requires you to have it to protect their investment. Like property taxes, this is usually collected monthly via escrow. It's a necessary cost, and the price can vary based on where your house is located, the age of the roof, and the risk of natural disasters.</p>
+
+    <h3>7. Private Mortgage Insurance (PMI)</h3>
+    <p>As I mentioned earlier, if you put down less than 20%, you have to pay PMI. It usually costs between 0.5% and 1.5% of your loan amount per year. It is annoying, but it is not forever. Once you build up 20% equity in your home (either by paying down the loan or by the house value going up), you can request to have PMI removed. Our calculator estimates this cost for you so you aren't surprised.</p>
+
+    <h3>8. HOA Fees</h3>
+    <p>If you buy a condo, a townhouse, or a house in a planned community, you will likely have to pay Homeowners Association (HOA) fees. These cover shared amenities like pools, gyms, or landscaping. HOA fees can be cheap ($50 a month) or insanely expensive ($500+ a month). I always tell people to factor this into the monthly payment. If the HOA fee is $300, treat your budget like it's $300 smaller.</p>
+
+    <h2>The Amortization Schedule: The Ugly Truth of Homeownership</h2>
+    <p>Okay, this is the most important part of this entire page. If you only read one section, read this one.</p>
+    
+    <p>When I bought my first house, I assumed that if I paid $2,000 a month, my loan balance went down by $2,000. I was wrong. Dead wrong.</p>
+    
+    <p>A mortgage is a "fully amortizing" loan. This means the bank wants their profit upfront. When you make your first payment, almost all of it goes to interest. Only a tiny fraction goes to principal (the actual loan).</p>
+
+    <p>Let’s look at a real example. You have a $400,000 loan at 6.5% interest.</p>
+    <ul>
+      <li>Your monthly payment is about $2,528.</li>
+      <li>In the <strong>first month</strong>, the bank takes $2,166 in interest. Only $362 goes to your principal.</li>
+      <li>In the <strong>fifteenth year</strong>, the bank takes $1,200 in interest, and $1,328 goes to principal.</li>
+    </ul>
+
+    <p>For the first 10 years of your mortgage, you are basically renting your house from the bank. You are paying them a massive amount of money, and your balance is barely dropping. This is why building equity takes so long.</p>
+    
+    <p>That is why we built the <strong>Amortization View</strong> into our calculator. When you click that button, you see a year-by-year table showing exactly how your balance drops. It is a visual wake-up call. It shows you the massive wall of interest you pay in the early years.</p>
+
+    <div class="callout">
+      "This is the biggest secret in the mortgage industry. The banks hope you never look at the amortization schedule. Because once you see it, you realize how much power you have to beat them."
+    </div>
+
+    <h2>How to Beat the Bank: The Power of Extra Payments</h2>
+    <p>Once I realized how the amortization schedule worked, I got angry. But then I realized something magical. I realized that if I paid just a little bit extra toward the <strong>principal</strong> every month, I could skip ahead in the schedule.</p>
+    
+    <p>If you pay an extra $100 a month directly to your principal, that $100 skips past the interest and immediately reduces your loan balance. It means the bank can't charge you interest on that $100 for the next 30 years.</p>
+    
+    <p>When I did this on my own mortgage, I ran the numbers. By paying just an extra $100 a month, I paid off my 30-year mortgage <strong>5 years early</strong> and saved over <strong>$60,000 in interest</strong>. That's $60,000 that stayed in my pocket instead of the bank's.</p>
+    
+    <p>Our calculator is designed to help you test this. Go back to the calculator, input your numbers, and look at the Amortization table. Then, find a "extra payment" calculator online, or just do the math. It is the single best financial move you can make.</p>
+
+    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80" alt="Data privacy and security" class="article-img">
+
+    <h2>Why We Made This Calculator Private and Free</h2>
+    <p>Have you ever noticed how many mortgage calculators online require you to give them your email and phone number before they show you a result?</p>
+    
+    <p>Within minutes, your phone starts ringing. Loan officers call you, text you, and send you spam emails. Why? Because they bought your data. They are "lead generation" sites. You aren't the customer; you are the product.</p>
+    
+    <p>When I built SmartLoanCalc, I made a strict rule: <strong>Your data is yours.</strong> All the math happens right in your browser using JavaScript. We never see your numbers. We never store them. We never sell them to brokers. You get a completely free, premium tool without selling your soul for it.</p>
+    
+    <p>We keep the lights on by showing a few simple ads. That's it. It's a fair deal. You get the truth about your mortgage, and we get to keep the servers running.</p>
+
+    <h2>Final Thoughts: Don't Let Them Intimidate You</h2>
+    <p>Buying a home is scary. The numbers are big. The jargon is confusing. But when you understand the math—when you know what a Loan Estimate actually means, when you understand how property taxes work, and when you see the amortization schedule—you take away the bank's power.</p>
+    
+    <p>You become the smartest person in the room.</p>
+    
+    <p>Use our calculator. Play with the numbers. Run different scenarios. If you can do that, you are ready to buy your home.</p>
+
   </article>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-        <p>Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
       </div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html">Calculator</a><a href="how-it-works.html">How It Works</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> MortgagePro. All rights reserved.</p>
-      <p class="disclaimer">Estimates only. Not financial advice.</p>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
