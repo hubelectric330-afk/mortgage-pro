@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Paid Extra on My Mortgage (And You Should Too) | SmartLoanCalc</title>
+  <meta name="description" content="I started paying an extra $200 a month on my mortgage and it changed everything. Here's my honest story about why extra payments work and why you should consider them too.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
 
+    /* ARTICLE HEADER */
+    .article-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .article-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .article-meta { color: #64748b; font-size: 15px; font-weight: 600; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .warning { background: #fef2f2; border-left: 5px solid #ef4444; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; color: #7f1d1d; }
+
+    /* TABLE STYLE */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 16px; }
+    .compare-table th, .compare-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .compare-table tr:hover { background: #f8fafc; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .article-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Calculator</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <h1>Why I Paid Extra on My Mortgage (And You Should Too)</h1>
+    <div class="article-meta">By A Regular Homebuyer | Updated November 2026 | 12 Min Read</div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p>For the first two years of my mortgage, I paid exactly what the bank told me to pay. Not a penny more. I set up the automatic payment, and every month, the exact same amount left my checking account and went to the lender. It felt responsible. It felt organized. It felt like I was doing everything right. And then one afternoon, I was talking to a coworker who mentioned, almost in passing, that she paid an extra $200 on her mortgage every month. I asked her why, and she said something that stayed with me: "Because otherwise, I'm just renting my house from the bank for thirty years."</p>
+
+    <p>That sentence bothered me. I went home and pulled up my amortization schedule for the first time, and I saw what she meant. After two full years of payments, I had paid the bank over $50,000. And of that, only about $7,000 had gone toward the actual loan balance. The rest was interest. I was paying on time, every single month, and barely making a dent in the money I owed. It was the first time I really understood how mortgages work, and it changed how I looked at my monthly payment forever.</p>
+
+    <p>I started paying extra on my mortgage the next month. Not a lot, because I couldn't afford a lot. But enough to feel like I was doing something. That decision turned out to be one of the best financial moves I've ever made. This is the story of why I started, what it did, and why I think you should consider it too.</p>
+
+    <h2>How Extra Payments Actually Work</h2>
+
+    <p>Before I get into my story, let me explain what actually happens when you pay extra on your mortgage. It's simpler than people think, and understanding it is the key to everything.</p>
+
+    <p>Your mortgage payment has two main parts. There's interest, which is the cost of borrowing the money, and there's principal, which is the actual amount you borrowed. In the early years of a mortgage, most of your payment goes toward interest. That's just how amortization works. The bank gets paid first, and your principal barely moves.</p>
+
+    <p>When you pay extra, you tell the lender to apply that extra money directly to the principal. That reduces the balance you owe. When the balance goes down, the interest charged the next month goes down too. And when the interest goes down, more of your regular payment goes toward principal, which reduces the balance even further. It's a compounding effect that works in your favor, and it's the reason a small extra payment can have an outsized impact.</p>
+
+    <div class="callout">
+      An extra payment isn't just one payment. It's a small reduction in your balance that lowers your interest charge forever. Every dollar of extra principal saves you more than a dollar over the life of the loan.
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80" alt="Person reviewing mortgage amortization and extra payments" class="article-img">
+
+    <h2>My First Extra Payment Was $50</h2>
+
+    <p>I want to be honest about this because I think it matters. When I started paying extra, I didn't have a lot of money to spare. I started with $50 a month. Not $500. Not $200. Fifty dollars. I set up an automatic transfer, and every month, an extra $50 went to the principal. It felt small. It felt like nothing. But I stuck with it.</p>
+
+    <p>A year later, I checked my amortization schedule again. And I saw something I didn't expect. My balance had dropped by more than it would have if I had paid only the minimum. It wasn't a huge difference, but it was real. The extra $50 a month had reduced my principal balance by an additional $600 over the year, and that meant lower interest charges going forward. That realization was powerful. It made me want to keep going.</p>
+
+    <p>Over the next few years, as my income grew, I bumped up the extra payment. First to $100, then to $150, then to $250. Every time I got a raise or a small windfall, I pushed a little more toward the principal. The effect compounded. By the time I checked my schedule again after several years of this, I had shaved years off my mortgage and saved tens of thousands of dollars in interest.</p>
+
+    <h2>What a Small Extra Payment Actually Does</h2>
+
+    <p>Let me show you the numbers, because seeing them is what made it click for me. Here's what happens on a $300,000 loan at 6.5% interest over 30 years when you add extra payments.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Monthly Payment</th>
+          <th>Total Interest Paid</th>
+          <th>Time to Pay Off</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Minimum Only</strong></td>
+          <td>$1,896</td>
+          <td>$382,000</td>
+          <td>30 years</td>
+        </tr>
+        <tr>
+          <td><strong>Extra $100/month</strong></td>
+          <td>$1,996</td>
+          <td>~$320,000</td>
+          <td>~25 years</td>
+        </tr>
+        <tr>
+          <td><strong>Extra $250/month</strong></td>
+          <td>$2,146</td>
+          <td>~$260,000</td>
+          <td>~21 years</td>
+        </tr>
+        <tr>
+          <td><strong>Extra $500/month</strong></td>
+          <td>$2,396</td>
+          <td>~$205,000</td>
+          <td>~19 years</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Look at the difference between the minimum and the extra $250. You save over $120,000 in interest and pay off the house nearly a decade earlier. That's not a small change. That's a completely different financial future. And the monthly difference is $250, which is less than most people spend on a car payment or a couple of nice dinners out each month.</p>
+
+    <div class="warning">
+      <strong>One critical thing:</strong> When you make an extra payment, you MUST tell your lender to apply it to the principal, not to "next month's payment." If you don't specify, some lenders will just hold the money and apply it to your next bill, which does absolutely nothing to save you interest. Call your lender or check your online portal to make sure your extra payments are going to principal. I always mark mine clearly, and I check the schedule to confirm it worked.
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Family home representing mortgage freedom" class="article-img">
+
+    <h2>The Emotional Side Nobody Talks About</h2>
+
+    <p>I expected the extra payments to save me money. What I didn't expect was how they would change how I felt about my mortgage. Before I started paying extra, my mortgage felt like this huge, heavy thing that would be with me for most of my adult life. It was the biggest debt I had ever taken on, and the idea of paying it for thirty years was quietly stressful. I didn't think about it every day, but it was always there in the background, a weight I carried.</p>
+
+    <p>Once I started paying extra, that weight started to lift. It wasn't because the balance had dropped dramatically — it hadn't, not at first. It was because I felt like I was in control. I was doing something to change the math. The bank had designed the schedule, but I had found a way to push back. Every extra payment was a small act of defiance against the "pay the minimum for thirty years" model, and it made me feel like I was building something real instead of just going through the motions.</p>
+
+    <p>There's another emotional benefit that I didn't see coming. When the economy wobbled and rates went up, I didn't panic. I knew my payment was fixed, and I knew I was already ahead of schedule. I had breathing room. And when I eventually reached a point where my balance was lower than the value of my house by a comfortable margin, I felt a kind of security that I had never felt before. I owned a real piece of my home, not just a promise to one day own it. That feeling was worth more than I can put into words.</p>
+
+    <h2>How to Start Paying Extra Without Feeling the Pain</h2>
+
+    <p>If you're reading this and thinking, "I can't afford to pay extra," I want to push back gently. I thought the same thing. But here's what I learned. You don't have to start with a big number. You can start with whatever you can comfortably afford, and you can increase it over time. Here's how I did it, and how you can too.</p>
+
+    <h3>1. Start with an amount that feels almost too small.</h3>
+    <p>My first extra payment was $50 a month. That's the cost of a couple of coffees a week, or one dinner out. It didn't change my lifestyle at all. But it changed the math. Start with $25, $50, or $100. Whatever feels painless. The point is to start, not to start big.</p>
+
+    <h3>2. Automate it so you don't have to think about it.</h3>
+    <p>The hardest part of paying extra is remembering to do it. Set up an automatic transfer from your checking account to your mortgage principal every month. Most lenders let you do this online. Once it's automatic, it becomes part of your routine, just like any other bill. You won't miss the money because you won't see it.</p>
+
+    <h3>3. Send any windfalls straight to principal.</h3>
+    <p>Tax refunds, bonuses, birthday money, a small inheritance, the money you saved by not going on a vacation — any time you get extra cash that you weren't expecting, send a chunk of it to the principal. I did this with my tax refund every year, and it made a bigger difference than I expected. A single $1,000 payment toward principal in year one can save you thousands of dollars over the life of the loan.</p>
+
+    <h3>4. Round up your payment.</h3>
+    <p>If your payment is $1,896, round it up to $1,900. That extra $4 a month is almost invisible, but it adds up over time. It's a painless way to get started, and it creates a habit of paying a little more.</p>
+
+    <h3>5. Make one extra payment a year.</h3>
+    <p>If you can't afford a monthly increase, try making one extra full payment a year. Some people do this by splitting their payment in half and paying every two weeks, which naturally creates an extra payment over the course of the year. That single extra payment can shave years off your mortgage.</p>
+
+    <div class="callout">
+      The best extra payment is the one you can actually sustain. Don't start with a number that stretches you thin, because you'll quit. Start small, automate it, and increase it when you can. Consistency beats size every time.
+    </div>
+
+    <h2>When You Should NOT Pay Extra</h2>
+
+    <p>I want to be balanced here, because paying extra on your mortgage isn't always the right move for everyone. There are situations where you should focus on other things first.</p>
+
+    <ul>
+      <li><strong>If you have high-interest debt.</strong> Credit cards at 20% interest are costing you far more than your mortgage is saving you. Pay those off first.</li>
+      <li><strong>If you don't have an emergency fund.</strong> Before you send extra to the mortgage, make sure you have at least three to six months of expenses saved. You don't want to be house-rich and cash-poor.</li>
+      <li><strong>If you're not saving for retirement.</strong> A mortgage payoff is great, but retirement savings have tax advantages and compound growth that a mortgage can't match. Make sure you're contributing to your retirement accounts first.</li>
+      <li><strong>If your mortgage rate is very low.</strong> If you locked in a rate below 3%, your money might do better invested in the market. That's a personal decision, but it's worth considering.</li>
+    </ul>
+
+    <p>For me, none of those applied. I had paid off my credit cards, I had an emergency fund, and I was contributing to my retirement. Paying extra on the mortgage was the next best use of my money. But I want you to look at your own situation honestly. The right answer depends on your whole financial picture, not just your mortgage.</p>
+
+    <h2>What My Mortgage Looks Like Now</h2>
+
+    <p>Today, several years after I started paying extra, my mortgage looks very different from what the bank projected. I'm on track to pay off my house years ahead of schedule. My balance is lower than it would have been otherwise, and my total interest cost will be tens of thousands of dollars less. I'm not going to say I've been perfect. There were months when I couldn't make the extra payment, and I didn't. There were months when I forgot, and I had to catch up. But the overall trend has been in my favor, and the results are real.</p>
+
+    <p>The thing I keep coming back to is this. The bank designed the amortization schedule to maximize their profit. They want you to pay the minimum for as long as possible. Paying extra is a way of taking some of that power back. It's not dramatic, and it's not fast, but it works. It's one of the few financial moves where a small, consistent action can produce a massive result over time.</p>
+
+    <div class="callout">
+      You don't have to pay off your mortgage in ten years. You don't have to be aggressive. You just have to start. A small extra payment, made consistently, can change your financial life in ways you can't see yet. Trust the math, and start where you are.
+    </div>
+
+    <p>If you take anything from this story, let it be this: your mortgage is not a fixed fate. It's a calculation, and you have more control over it than you think. Start with $50. Automate it. Increase it when you can. Watch what happens. It might be the best thing you ever do for your financial future.</p>
+
+    <p>That's my story. I hope it inspires you to start paying a little extra, and I hope the results are as real for you as they have been for me.</p>
+
+    <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— A Regular Homebuyer (and SmartLoanCalc Reader)</p>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
