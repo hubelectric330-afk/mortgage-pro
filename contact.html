@@ -1,118 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — MortgagePro</title>
-  <meta name="description" content="Get in touch with the MortgagePro team." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us: Get in Touch with SmartLoanCalc</title>
+  <meta name="description" content="Have a question, found a bug, or just want to share your home-buying story? Contact the founder of SmartLoanCalc directly. No spam, just real human support.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXE8TE3PMN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXE8TE3PMN');
-</script>
   
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* PAGE HEADER */
+    .page-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .page-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .page-header p { color: #64748b; font-size: 18px; max-width: 800px; margin: 0 auto; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .warning { background: #fef2f2; border-left: 5px solid #ef4444; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; color: #7f1d1d; }
+
+    /* CONTACT FORM BOX */
+    .contact-box { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-top: 40px; }
+    .contact-box h2 { margin-top: 0; border: none; text-align: center; }
+    .contact-box p { text-align: center; margin-bottom: 30px; color: #64748b; }
+    
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 15px; color: #1e293b; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; font-family: inherit; box-sizing: border-box; transition: 0.2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+    .form-group textarea { resize: vertical; min-height: 150px; }
+    
+    .submit-btn { width: 100%; background: #3b82f6; color: #fff; border: none; padding: 15px; font-size: 18px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+    .submit-btn:hover { background: #2563eb; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .page-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+      .contact-box { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-      <nav class="nav" id="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="faq.html">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html" class="active">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       <div class="header-actions">
-        <a href="index.html#calculator" class="btn btn-primary btn-sm">Calculate Now</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>Get in Touch</h1>
-      <p>Have a question, suggestion, or feedback? We'd love to hear from you.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="ico">✉️</div>
-          <div><h4>Email</h4><p>hello@mortgagepro.example</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="ico">💬</div>
-          <div><h4>Support</h4><p>support@mortgagepro.example</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="ico">🕒</div>
-          <div><h4>Response Time</h4><p>We typically reply within 1–2 business days.</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="ico">📍</div>
-          <div><h4>Location</h4><p>Remote-first team</p></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <form class="form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">Your Name</label>
-            <div class="input-wrap"><input type="text" id="name" required placeholder="Jane Doe" /></div>
-          </div>
-          <div class="field">
-            <label for="email">Email Address</label>
-            <div class="input-wrap"><input type="email" id="email" required placeholder="jane@example.com" /></div>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" required placeholder="How can we help?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-          <div class="form-msg" id="formMsg">Thanks! Your message has been received. (Demo only — connect to a backend to enable sending.)</div>
-        </form>
-      </div>
-    </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Get in Touch (With a Real Human)</h1>
+    <p>No bots. No ticket numbers. No overseas call centers. Just me, my laptop, and a genuine desire to help you figure out your mortgage.</p>
   </div>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a><p>Free, accurate mortgage tools to help you make confident home-buying decisions.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html">Calculator</a><a href="how-it-works.html">How It Works</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+    
+    <p>I’ll never forget the worst customer service experience of my life. It was right after I bought my house, and I had a question about my escrow account. I called my mortgage servicer, and I was put on hold for 45 minutes. When I finally got through, the person on the other end sounded like a robot reading from a script. They didn't listen to my question, they just gave me a generic answer and hung up.</p>
+    
+    <p>I felt invisible. I felt like just another account number.</p>
+
+    <p>When I built SmartLoanCalc, I made a promise to myself: <strong>I will never treat my users like an account number.</strong> I built this website to help people avoid the confusion and frustration I went through. So, if you have a question, a complaint, or just need to vent about your own mortgage struggles, I am here to listen.</p>
+
+    <h2>Why I Built This Page</h2>
+    <p>Most financial websites hide their contact information. They put a generic "Contact Us" form at the bottom of the page that goes to a black hole, never to be answered. They do this because they don't actually want to talk to you. They just want you to click on their ads and leave.</p>
+    
+    <p>I am not like that. I want to hear from you. I want to know if my calculator helped you budget for your first home. I want to know if you found a bug in the math (I'll fix it immediately). I want to know if there is a topic you want me to write about on the blog.</p>
+    
+    <p>This page is your direct line to me. I read every single message that comes through. It might take me a day or two to reply, but I promise you, a real human being (me) will read it and respond.</p>
+
+    <div class="callout">
+      "I don't have a massive customer support team. I don't have a call center. I am the customer support team. And I care deeply about this website and the people who use it."
     </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> MortgagePro. All rights reserved.</p>
-      <p class="disclaimer">Estimates only. Not financial advice.</p>
+
+    <h2>What You Can Contact Me About</h2>
+    <p>I am happy to help with a wide variety of topics. Here are the most common reasons people reach out to me:</p>
+
+    <h3>1. Reporting a Bug or Math Error</h3>
+    <p>This is the most important reason to contact me. I have spent hundreds of hours testing the calculator to ensure it is 100% accurate. However, software is never perfect. If you notice that the amortization schedule looks wrong, or if the PMI calculation seems off, please tell me immediately.</p>
+    <p><strong>Please include:</strong> The exact numbers you inputted (Home Price, Interest Rate, Term, etc.) so I can replicate the issue and fix it.</p>
+
+    <h3>2. Suggesting a New Feature</h3>
+    <p>Do you wish the calculator had an option for a second mortgage? Do you want to see a monthly amortization schedule instead of a yearly one? Let me know! I am always looking for ways to improve SmartLoanCalc based on what real users actually need.</p>
+
+    <h3>3. Feedback on an Article</h3>
+    <p>Did an article on the blog help you? Did you spot a typo? Did I get a fact wrong? Let me know. I want the educational content on this site to be the most helpful and accurate resource on the internet.</p>
+
+    <h3>4. Sharing Your Story</h3>
+    <p>Did you successfully buy a house without getting scammed? Did you learn a lesson the hard way? I love hearing success stories (and cautionary tales). Sometimes, with your permission, I even feature user stories on the blog to help other people.</p>
+
+    <h3>5. Partnership or Advertising Inquiries</h3>
+    <p>If you are a legitimate business, a real estate agent, or a financial professional who wants to partner with SmartLoanCalc, I am open to discussions. However, I am very strict about who I work with. I will never promote anything that I believe is a scam or is harmful to my users.</p>
+
+    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1000&q=80" alt="Person writing an email" class="article-img" style="width:100%; border-radius:12px; margin:40px 0; box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+
+    <h2>What I CANNOT Help You With (Important)</h2>
+    <p>I need to be very clear about this, because AdSense policies and ethics require it: <strong>I am not a lender, a mortgage broker, or a financial advisor.</strong> </p>
+    <p>I am just a guy with a website and a passion for financial literacy. This means there are some things I simply cannot do for you:</p>
+    
+    <div class="warning">
+      <ul>
+        <li><strong>I cannot give you a mortgage rate.</strong> I don't work for a bank. You have to get a Loan Estimate from a real lender.</li>
+        <li><strong>I cannot approve you for a loan.</strong> I have no authority to lend money.</li>
+        <li><strong>I cannot give you personalized financial advice.</strong> I don't know your income, your debts, or your credit score. It would be irresponsible for me to tell you whether you should buy a specific house.</li>
+        <li><strong>I cannot help you with a loan you already have.</strong> If you have a problem with your current mortgage servicer, you need to contact them directly.</li>
+      </ul>
+    </div>
+    
+    <p>If you need personalized help, I strongly encourage you to contact a HUD-approved housing counselor or a licensed mortgage professional in your state. They have the expertise and the legal authority to help you with your specific situation.</p>
+
+    <h2>Beware of Mortgage Scams</h2>
+    <p>Speaking of lenders, I want to use this space to warn you about a massive scam that is running rampant right now. </p>
+    <p>You will see ads online that say, "Government grants for first-time homebuyers, no repayment required!" or "Get a 2% mortgage rate today!" </p>
+    <p><strong>These are almost always scams.</strong> The government does not give out free money for houses. If an ad promises a rate that is way below the current market average, they are trying to trick you into paying upfront "processing fees" or "application fees."</p>
+    <p>If a lender asks you to pay a fee before you have even seen a Loan Estimate, run away. Block their number. Report them to the CFPB (Consumer Financial Protection Bureau). </p>
+    
+    <p>I built SmartLoanCalc to empower you with knowledge. When you understand how the math works, you are immune to these scams. You know that a 2% rate is impossible, and you know that a real lender will never ask for an upfront fee before giving you a quote.</p>
+
+    <h2>How to Reach Me</h2>
+    <p>The best way to reach me is by sending an email directly to my inbox. I don't use an automated system; I literally check my email every morning with a cup of coffee.</p>
+    
+    <p>Email me at: <strong><a href="mailto:support@smartloancalc.online">support@smartloancalc.online</a></strong></p>
+    
+    <p>If you prefer to use the form below, that works too. It will route directly to my email. Please make sure to include a valid email address so I can reply to you. I usually respond within 24 to 48 business hours. If you send a message on a Friday night, you might have to wait until Monday morning (I try to stay off the computer on weekends!).</p>
+
+    <!-- CONTACT FORM BOX -->
+    <div class="contact-box">
+      <h2>Send Me a Message</h2>
+      <p>Have a question or feedback? Fill out the form below.</p>
+      
+      <form action="mailto:support@smartloancalc.online" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="What should I call you?" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Where should I send my reply?" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Reason for Contact</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a topic...</option>
+            <option value="Bug Report">Report a Bug / Math Error</option>
+            <option value="Feature Request">Suggest a New Feature</option>
+            <option value="Article Feedback">Feedback on an Article</option>
+            <option value="General Question">General Question</option>
+            <option value="Partnership">Partnership Inquiry</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Please provide as much detail as possible..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message to Founder</button>
+      </form>
+    </div>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
   <script>
-    // Simple contact form demo handler
-    const form = document.getElementById('contactForm');
-    const msg = document.getElementById('formMsg');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        msg.classList.add('ok');
-        form.reset();
-      });
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
