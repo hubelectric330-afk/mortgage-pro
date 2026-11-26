@@ -1,97 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ — MortgagePro</title>
-  <meta name="description" content="Frequently asked questions about mortgages and our calculator." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage FAQ: Real Answers to Your Toughest Questions | SmartLoanCalc</title>
+  <meta name="description" content="Stop getting the runaround. Real, honest answers to the most common mortgage questions, from PMI and closing costs to credit scores and escrow accounts.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXE8TE3PMN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXE8TE3PMN');
-</script>
   
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.8; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* FAQ PAGE LAYOUT */
+    .page-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .page-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; }
+    .page-header p { color: #64748b; font-size: 18px; max-width: 800px; margin: 0 auto; }
+
+    .faq-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18px; color: #334155; }
+    .faq-category { margin-bottom: 60px; }
+    .faq-category h2 { font-size: 32px; color: #0f172a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-bottom: 30px; font-weight: 800; }
+    
+    /* ACCORDION STYLE */
+    details { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+    summary { padding: 20px; font-size: 20px; font-weight: 700; color: #1e293b; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 24px; color: #3b82f6; font-weight: 400; }
+    details[open] summary::after { content: '-'; }
+    details[open] summary { border-bottom: 1px solid #e2e8f0; }
+    
+    .faq-content { padding: 20px; border-top: 1px solid #f1f5f9; }
+    .faq-content p { margin-bottom: 18px; }
+    .faq-content ul { margin-bottom: 20px; padding-left: 25px; }
+    .faq-content li { margin-bottom: 10px; }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 20px; border-radius: 0 8px 8px 0; margin: 25px 0; font-style: italic; color: #1e3a8a; }
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .page-header h1 { font-size: 32px; }
+      .faq-category h2 { font-size: 26px; }
+      summary { font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-      <nav class="nav" id="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="faq.html" class="active">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       <div class="header-actions">
-        <a href="index.html#calculator" class="btn btn-primary btn-sm">Calculate Now</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>Frequently Asked Questions</h1>
-      <p>Answers to the most common questions about mortgages and using our calculator.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>How accurate is this mortgage calculator?</summary>
-        <div class="faq-answer">Our calculator uses the standard amortization formula used by lenders. Results are accurate estimates for principal and interest, plus any taxes, insurance, and HOA you enter. Your actual payment may differ due to lender fees, PMI, and closing costs.</div>
-      </details>
-      <details class="faq-item">
-        <summary>What is a down payment?</summary>
-        <div class="faq-answer">A down payment is the portion of the home price you pay upfront. The rest is financed through a mortgage. A larger down payment reduces your loan amount and monthly payment, and may help you avoid PMI.</div>
-      </details>
-      <details class="faq-item">
-        <summary>What is PMI and does this calculator include it?</summary>
-        <div class="faq-answer">PMI (Private Mortgage Insurance) is typically required when your down payment is less than 20%. Our basic calculator does not include PMI automatically — you can add it manually via the Advanced section if needed.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Should I choose a 15-year or 30-year loan?</summary>
-        <div class="faq-answer">A 15-year loan has higher monthly payments but much less total interest. A 30-year loan offers lower monthly payments but more interest over time. Choose based on your budget and long-term plans.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Does the calculator include property taxes and insurance?</summary>
-        <div class="faq-answer">Yes — expand the "Advanced" section to enter annual property tax, annual home insurance, and monthly HOA fees. These will be included in your monthly estimate and chart.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Is my data stored or shared?</summary>
-        <div class="faq-answer">No. All calculations happen in your browser. We do not store, transmit, or share any of the numbers you enter. See our Privacy Policy for details.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Can I see the amortization schedule?</summary>
-        <div class="faq-answer">Yes. On the calculator page, click "Show Amortization Schedule" to view a year-by-year breakdown of principal, interest, and remaining balance.</div>
-      </details>
-    </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>The No-BS Mortgage FAQ</h1>
+    <p>When I bought my first home, I felt like I was drowning in confusing jargon and hidden fees. I built this page to answer the questions I was too embarrassed to ask my lender. Real answers from a real homebuyer. No fluff, no spam.</p>
   </div>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a><p>Free, accurate mortgage tools to help you make confident home-buying decisions.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html">Calculator</a><a href="how-it-works.html">How It Works</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+  <!-- FAQ BODY -->
+  <div class="faq-body">
+
+    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" alt="Person confused by mortgage paperwork" class="article-img">
+
+    <!-- CATEGORY 1 -->
+    <div class="faq-category">
+      <h2>1. Using SmartLoanCalc & Privacy</h2>
+      
+      <details>
+        <summary>Is this calculator actually accurate?</summary>
+        <div class="faq-content">
+          <p>Yes, the math is incredibly accurate. We use the exact same industry-standard amortization formula that the big banks use to calculate your Principal and Interest. However, you need to understand the difference between a "calculator estimate" and a "Loan Estimate." Our calculator gives you a highly accurate projection based on the numbers you input. Your actual lender might have slightly different numbers because they include specific daily interest calculations, their own origination fees, and their own escrow requirements. Think of our tool as the ultimate planning compass, not the final map. It is designed to help you budget and spot scams before you even talk to a lender.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why don't you ask for my email address or phone number?</summary>
+        <div class="faq-content">
+          <p>Because I hate spam just as much as you do. When I was shopping for my first mortgage, I made the mistake of entering my real phone number into a popular mortgage website. Within five minutes, my phone started ringing. For the next two weeks, I was bombarded with calls from aggressive loan officers who didn't care about my financial situation; they just wanted a commission.</p>
+          <p>Those websites sell your data as a "lead." I built SmartLoanCalc differently. All the calculations happen right in your browser. We don't collect your data, we don't store it, and we won't sell it to brokers. You get a premium tool without selling your soul for it.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Does your calculator include taxes and insurance?</summary>
+        <div class="faq-content">
+          <p>It absolutely does, and I highly recommend you use that feature. Many online calculators only show you Principal and Interest (P&I). This is dangerous because your actual mortgage payment will be much higher. When I bought my house, the lender told me my P&I would be $1,500. The actual bill was $2,180 because of taxes and insurance!</p>
+          <p>In our calculator, if you click "Advanced," you can input your property taxes, homeowners insurance, HOA fees, and PMI. I built it this way because I want you to see the <em>real</em> number, so you don't get a nasty shock when the first bill arrives.</p>
+        </div>
+      </details>
     </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> MortgagePro. All rights reserved.</p>
-      <p class="disclaimer">Estimates only. Not financial advice.</p>
+
+    <!-- CATEGORY 2 -->
+    <div class="faq-category">
+      <h2>2. Down Payments & PMI</h2>
+
+      <details>
+        <summary>Do I really need a 20% down payment?</summary>
+        <div class="faq-content">
+          <p>No, you don't. This is one of the biggest myths in real estate. While 20% is ideal because it helps you avoid Private Mortgage Insurance (PMI), it is not a strict requirement. There are conventional loans that allow 3% down, FHA loans that allow 3.5% down, and if you are a veteran, VA loans might allow 0% down.</p>
+          <p>The key is to find a down payment amount that leaves you with enough savings for an emergency fund. Do not drain your life savings just to hit 20%. I've seen people buy a house with 20% down and then have zero dollars left to fix a broken furnace in the winter. That's a nightmare scenario. Keep your cash reserves.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is PMI, and how do I get rid of it?</summary>
+        <div class="faq-content">
+          <p>PMI stands for Private Mortgage Insurance. If you put down less than 20%, your lender sees you as a higher risk, so they require you to pay PMI. The ugly truth is that PMI protects the <em>lender</em>, not you. If you default on the loan, the insurance company pays the lender, not you.</p>
+          <p>The good news is that PMI doesn't last forever. Once you build up 20% equity in your home (either by paying down the loan or because the home value increased), you can request to have it removed. By law, the lender must automatically remove it once your balance reaches 78% of the original home value. When I reached that point, I called my lender immediately and got it removed, saving me $150 a month!</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- CATEGORY 3 -->
+    <div class="faq-category">
+      <h2>3. Rates, Lenders, and Credit</h2>
+
+      <details>
+        <summary>How do I compare lenders without getting scammed?</summary>
+        <div class="faq-content">
+          <p>You need to get a "Loan Estimate" from at least three different lenders on the exact same day. This is crucial. Lenders can change rates daily. If you get an estimate from Bank A on Monday and Bank B on Friday, you aren't comparing apples to apples.</p>
+          <p>Look past the interest rate. Look at the "Origination Charges" (the fees the lender charges to make the loan) and the "Estimated Cash to Close." A lender might offer a slightly lower rate, but charge you $4,000 more in closing costs. Run the math to see if the lower rate actually saves you money in the long run.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Should I choose a 15-year or 30-year mortgage?</summary>
+        <div class="faq-content">
+          <p>It depends entirely on your risk tolerance and budget. A 30-year mortgage has lower monthly payments, giving you more breathing room. A 15-year mortgage has higher monthly payments, but you pay off the house in half the time and save a massive amount of interest.</p>
+          <p>My personal strategy? I took out a 30-year mortgage for the safety of the lower payment, but I made extra payments every month to pay it off faster. This gave me flexibility—if I lost my job, I only owed the lower 30-year payment. If you can comfortably afford the 15-year payment and still have an emergency fund, go for it.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What credit score do I need to buy a house?</summary>
+        <div class="faq-content">
+          <p>It depends on the loan type. Generally, you can get a conventional loan with a score around 620. FHA loans might allow scores as low as 580 (or sometimes lower with larger down payments). However, your credit score directly impacts your interest rate.</p>
+          <p>The higher your score (740+), the better the rate you will get. My advice: spend 6 months paying down credit card balances and fixing errors on your credit report before you apply for a mortgage. It can save you tens of thousands of dollars in the long run. I know waiting is frustrating, but the financial payoff is massive.</p>
+        </div>
+      </details>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80" alt="Calculator and mortgage documents" class="article-img">
+
+    <!-- CATEGORY 4 -->
+    <div class="faq-category">
+      <h2>4. The Real Cost of a Mortgage</h2>
+
+      <details>
+        <summary>What are closing costs, and why are they so expensive?</summary>
+        <div class="faq-content">
+          <p>When I bought my first house, I was shocked by closing costs. They are a collection of fees required to finalize the loan and transfer the property. They usually range from 2% to 5% of the home's purchase price. This includes the lender's origination fee, the appraisal fee, title search and insurance, and recording fees.</p>
+          <p>I highly recommend asking your lender for a "Loan Estimate" as early as possible. By law, they must provide it within 3 days of your application. Review it carefully and ask about every single fee you don't understand. Don't be afraid to negotiate; some fees are set in stone, but others can be reduced.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is an escrow account and why did my payment go up?</summary>
+        <div class="faq-content">
+          <p>An escrow account is a way for your lender to manage your property taxes and homeowners insurance. Instead of you having to remember to pay a massive tax bill once a year, your lender collects a portion of those costs every month along with your mortgage payment.</p>
+          <p>Here is the annoying part: your payment can go up if your property taxes or insurance premiums increase. The lender will do an "escrow analysis" and adjust your monthly payment to cover the shortage. It's frustrating, but it's a normal part of homeownership. Always keep a little buffer in your monthly budget for escrow increases.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is amortization?</summary>
+        <div class="faq-content">
+          <p>Amortization is the schedule of how your loan is paid off over time. It is the secret that the banks don't want you to look at too closely. In the early years of a mortgage, almost all of your monthly payment goes toward interest, and very little goes toward the principal.</p>
+          <p>For example, in the first year of a 30-year loan, you might pay $18,000 but only reduce your loan balance by $3,000. Knowing this is crucial if you want to make extra payments to save on interest. We built an Amortization Schedule tool right into our homepage calculator so you can see this for yourself.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- CATEGORY 5 -->
+    <div class="faq-category">
+      <h2>5. The Final Steps</h2>
+
+      <details>
+        <summary>What is a home appraisal, and what happens if it comes in low?</summary>
+        <div class="faq-content">
+          <p>An appraisal is an independent assessment of the home's value, required by the lender to ensure they aren't lending you more money than the house is worth. If you agree to buy a house for $400,000 but the appraisal comes in at $390,000, the lender will only base your loan on the $390,000.</p>
+          <p>You have to figure out how to cover the $10,000 gap. You can renegotiate with the seller, or pay the difference out of pocket. Always have an "appraisal contingency" in your purchase contract to protect yourself. Don't waive this contingency unless you have a massive amount of cash and are willing to risk it.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I make extra payments to pay off my mortgage faster?</summary>
+        <div class="faq-content">
+          <p>Yes, and I highly encourage it. If you have a conventional loan, you can usually make extra payments without a penalty. Just make sure you specify to your lender that the extra money should go directly to the <strong>principal</strong>, not just towards next month's payment.</p>
+          <p>Paying an extra $100 a month towards your principal can shave years off your mortgage and save you tens of thousands of dollars in interest. I started doing this in my third year of homeownership, and the impact on my loan balance was shocking.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is SmartLoanCalc truly free? What's the catch?</summary>
+        <div class="faq-content">
+          <p>Yes, it is 100% free. There is no catch. I built this tool to help people avoid the mistakes I made. We keep the lights on by displaying non-intrusive ads through Google AdSense. You don't have to sign up, you don't have to pay a subscription, and we will never sell your data. It's just a safe, free tool to help you make the biggest financial decision of your life.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>Still have questions?</strong> If you couldn't find what you were looking for, don't hesitate to reach out. I read every message personally. You can contact me via the <a href="contact.html">Contact Us</a> page.
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
