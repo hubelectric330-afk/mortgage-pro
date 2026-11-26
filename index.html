@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MortgagePro — Professional Mortgage Calculator</title>
+  <title>SmartLoanCalc — Professional Mortgage Calculator</title>
   <meta name="description" content="Calculate your monthly mortgage payment instantly. Professional, accurate, and easy-to-use mortgage calculator with taxes, insurance, PMI, and HOA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,6 +23,8 @@
     .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
     .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
     .logo-accent { color: #3b82f6; }
+    
+    /* Navigation */
     .nav { display: flex; gap: 5px; align-items: center; }
     .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
     .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
@@ -118,8 +120,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-mark">M</span>
-        <span>Mortgage<span class="logo-accent">Pro</span></span>
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
       </a>
       
       <nav class="nav" id="navMenu">
@@ -130,6 +132,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       
       <div class="header-actions">
@@ -282,7 +285,7 @@
   <section class="article-section">
     <div class="article-wrap">
       
-      <h1>Why I Built MortgagePro: The Ugly Truth About Mortgage Math</h1>
+      <h1>Why I Built SmartLoanCalc: The Ugly Truth About Mortgage Math</h1>
       
       <p>I still remember the exact moment I realized the mortgage industry was designed to confuse me. It was a sweltering Tuesday in July, three years ago. My wife, Sarah, and I were sitting at our tiny kitchen table. Between us was a stack of papers—Loan Estimates from three different banks—and a half-eaten pizza. We were trying to buy our first house. We had saved for five years. We had done everything "right." But looking at those numbers, I felt like I was trying to read a foreign language with a blindfold on.</p>
       
@@ -294,7 +297,7 @@
 
       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Real-time financial data" class="article-img">
 
-      <p>That anger is exactly why MortgagePro exists. I didn't build this to make a quick buck. I built it because I wish someone had built it for me when I was sitting at that kitchen table in July. Today, I want to pull back the curtain. I want to talk about the 4 core features of this website, not like a corporate robot, but like a guy who has been in the trenches, made the mistakes, and wants to save you from doing the same.</p>
+      <p>That anger is exactly why SmartLoanCalc exists. I didn't build this to make a quick buck. I built it because I wish someone had built it for me when I was sitting at that kitchen table in July. Today, I want to pull back the curtain. I want to talk about the 4 core features of this website, not like a corporate robot, but like a guy who has been in the trenches, made the mistakes, and wants to save you from doing the same.</p>
 
       <h2>1. Instant Results: Stop Giving Away Your Privacy for a Number</h2>
       <p>Have you ever googled "mortgage calculator" and clicked on one of the big-name sites? Let me guess what happened. You typed in your home price. You typed in your down payment. And then, before you could see a single number, a popup appeared: <em>"Enter your email and phone number to see your results!"</em></p>
@@ -303,7 +306,7 @@
       
       <p>What those websites don't tell you is that they aren't really mortgage companies. They are "Lead Generation" sites. Their business model is harvesting your personal data and selling it to the highest bidder. Your phone number is worth about $30 to them. They don't care about your financial planning; they care about the commission.</p>
       
-      <p>When I built MortgagePro, I made a hard rule: <strong>We will never ask for your email or phone number to show you a calculation.</strong> Not ever.</p>
+      <p>When I built SmartLoanCalc, I made a hard rule: <strong>We will never ask for your email or phone number to show you a calculation.</strong> Not ever.</p>
       
       <p>That’s why the very first feature of this site is <strong>Instant Results</strong>. When you type a number into the "Home Price" box, the math happens instantly. Why? Because our calculator uses JavaScript that runs entirely inside your own web browser. It doesn't send a signal to a server. It doesn't wait for a database to respond. It just does the math, right there on your screen, in less time than it takes to blink.</p>
       
@@ -322,7 +325,7 @@
       
       <p>We had to cancel our summer vacation that year to make up for the difference. It was humiliating. It was stressful. And it was entirely avoidable if I had used a tool with a <strong>Full Breakdown</strong>.</p>
       
-      <p>When you use the MortgagePro calculator, we don't let you ignore the hidden costs. If you click on "Advanced," you can input your estimated property taxes, your insurance premiums, and your HOA fees. We even calculate a realistic PMI estimate if your down payment is under 20%.</p>
+      <p>When you use the SmartLoanCalc calculator, we don't let you ignore the hidden costs. If you click on "Advanced," you can input your estimated property taxes, your insurance premiums, and your HOA fees. We even calculate a realistic PMI estimate if your down payment is under 20%.</p>
       
       <p>Why? Because I want you to see the <em>real</em> number. The number that matters. Let's look at a real example. You buy a $400,000 house with 5% down. The P&I might be $2,500. But when you add $600 for property taxes, $150 for insurance, $200 for PMI, and $100 for HOA, your true monthly payment is $3,550.</p>
       
@@ -339,7 +342,7 @@
       
       <p>Why does this happen? Because mortgages are front-loaded. The bank wants their profit upfront. So in the early years, almost 80% of your payment goes toward interest, and only 20% goes toward paying off the actual house.</p>
       
-      <p>If I had known this earlier, I would have done things differently. I would have made extra payments. I would have fought back. That is why I built the <strong>Amortization View</strong> into MortgagePro. It's a feature you won't find on basic calculators, because the banks don't want you to see it. They want you to just pay your bill and not ask questions.</p>
+      <p>If I had known this earlier, I would have done things differently. I would have made extra payments. I would have fought back. That is why I built the <strong>Amortization View</strong> into SmartLoanCalc. It's a feature you won't find on basic calculators, because the banks don't want you to see it. They want you to just pay your bill and not ask questions.</p>
       
       <p>With our tool, you can click "View Amortization Schedule" and see a table that shows exactly how your loan breaks down year by year. You can see the massive wall of interest you are paying in years 1 through 10. And more importantly, it shows you the power of extra payments.</p>
       
@@ -361,7 +364,7 @@
       <h2>What I Want You to Take Away From This</h2>
       <p>Buying a home is terrifying. It's one of the biggest financial decisions you will ever make, and the system is designed to confuse you. Lenders use jargon to make things sound better than they are. Real estate agents want a quick sale. And websites want your data.</p>
       
-      <p>I built MortgagePro to be the antidote to all of that. I built it to be the tool I wish I had sitting at that kitchen table in July.</p>
+      <p>I built SmartLoanCalc to be the antidote to all of that. I built it to be the tool I wish I had sitting at that kitchen table in July.</p>
       
       <p>If there is one piece of advice I can give you, it is this: <strong>Do the math yourself.</strong> Don't just trust the number the lender gives you on a napkin. Don't just trust the P&I estimate on Zillow. Put the numbers into our calculator. Look at the Full Breakdown. Look at the Amortization Schedule. See the truth.</p>
       
@@ -369,7 +372,7 @@
       
       <p>Good luck out there. You've got this.</p>
       
-      <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— The MortgagePro Founder</p>
+      <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— The SmartLoanCalc Founder</p>
 
     </div>
   </section>
@@ -380,8 +383,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
-            <span class="logo-mark">M</span>
-            <span>Mortgage<span class="logo-accent">Pro</span></span>
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
           </a>
           <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
         </div>
@@ -403,7 +406,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="year"></span> MortgagePro. All rights reserved. Estimates only. Not financial advice.</p>
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
       </div>
     </div>
   </footer>
