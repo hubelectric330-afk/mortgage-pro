@@ -1,123 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — MortgagePro</title>
-  <meta name="description" content="Tips, guides, and insights on mortgages, home buying, and personal finance." />
+  <title>Mortgage Blog: Real Advice & Stories | SmartLoanCalc</title>
+  <meta name="description" content="Read real stories, personal experiences, and honest advice about navigating the mortgage process. No jargon, just the truth." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXE8TE3PMN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXE8TE3PMN');
-</script>
   
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* BLOG HEADER */
+    .page-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .page-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; }
+    .page-header p { color: #64748b; font-size: 18px; max-width: 700px; margin: 0 auto; }
+
+    /* BLOG GRID */
+    .blog-section { padding: 60px 0; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+    
+    .blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+    
+    .blog-img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+    
+    .blog-meta { font-size: 12px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .blog-title { font-size: 20px; color: #0f172a; font-weight: 800; margin: 0 0 12px; line-height: 1.3; }
+    .blog-excerpt { color: #475569; font-size: 15px; margin-bottom: 20px; flex-grow: 1; }
+    
+    .read-more { color: #3b82f6; font-weight: 700; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; }
+    .read-more:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .page-header h1 { font-size: 32px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-      <nav class="nav" id="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="faq.html">FAQ</a>
         <a href="blog.html" class="active">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       <div class="header-actions">
-        <a href="index.html#calculator" class="btn btn-primary btn-sm">Calculate Now</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>Mortgage Insights &amp; Guides</h1>
-      <p>Practical advice to help you navigate the home-buying journey with confidence.</p>
-    </div>
-  </section>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>The SmartLoanCalc Blog</h1>
+    <p>Real stories, personal mistakes, and honest advice about navigating the messy world of mortgages. Written by a human, for humans.</p>
+  </div>
 
-  <div class="container">
+  <!-- BLOG GRID -->
+  <div class="container blog-section">
     <div class="blog-grid">
-      <article class="post-card">
-        <div class="post-thumb">🏠</div>
-        <div class="post-body">
-          <span class="post-tag">Guide</span>
-          <h3>15-Year vs 30-Year Mortgage: Which Is Right for You?</h3>
-          <p>Compare the trade-offs between lower monthly payments and long-term savings.</p>
-          <span class="post-meta">Coming soon</span>
+
+      <!-- ARTICLE 1 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Using a calculator" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Mortgage Basics</div>
+          <h2 class="blog-title">How to Use a Mortgage Calculator Without Lying to Yourself</h2>
+          <p class="blog-excerpt">I thought I could just guess my payment. I was wrong by $400. Here is the exact way I learned to use a calculator to get the real truth.</p>
+          <a href="article-1.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
-      <article class="post-card">
-        <div class="post-thumb">💰</div>
-        <div class="post-body">
-          <span class="post-tag">Tips</span>
-          <h3>How Much House Can You Really Afford?</h3>
-          <p>A simple framework for setting a realistic home-buying budget.</p>
-          <span class="post-meta">Coming soon</span>
+      </div>
+
+      <!-- ARTICLE 2 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="House" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Loan Terms</div>
+          <h2 class="blog-title">15-Year vs 30-Year: The $100,000 Decision</h2>
+          <p class="blog-excerpt">My lender pushed me toward a 30-year because it was "safer". But when I looked at the math, I realized how much money I was throwing away.</p>
+          <a href="article-2.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
-      <article class="post-card">
-        <div class="post-thumb">📉</div>
-        <div class="post-body">
-          <span class="post-tag">Explainer</span>
-          <h3>Understanding Interest Rates and APR</h3>
-          <p>What the numbers on your loan estimate actually mean.</p>
-          <span class="post-meta">Coming soon</span>
+      </div>
+
+      <!-- ARTICLE 3 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80" alt="Keys" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Hidden Costs</div>
+          <h2 class="blog-title">The $150/Month Surprise: My PMI Story</h2>
+          <p class="blog-excerpt">Nobody told me about Private Mortgage Insurance until I was signing the papers. Don't let this hidden fee blindside you like it did to me.</p>
+          <a href="article-3.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
-      <article class="post-card">
-        <div class="post-thumb">🧾</div>
-        <div class="post-body">
-          <span class="post-tag">Guide</span>
-          <h3>Closing Costs: What to Expect</h3>
-          <p>A breakdown of the fees you'll pay at closing and how to prepare.</p>
-          <span class="post-meta">Coming soon</span>
+      </div>
+
+      <!-- ARTICLE 4 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Closing Costs" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Closing Costs</div>
+          <h2 class="blog-title">I Saved $50k for a Down Payment and Forgot the Fees</h2>
+          <p class="blog-excerpt">I almost had to borrow money from my parents because I didn't calculate closing costs. Here is the real list of fees they don't tell you about.</p>
+          <a href="article-4.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
-      <article class="post-card">
-        <div class="post-thumb">🛡️</div>
-        <div class="post-body">
-          <span class="post-tag">Tips</span>
-          <h3>How to Avoid PMI with a Smaller Down Payment</h3>
-          <p>Strategies to reduce or eliminate private mortgage insurance.</p>
-          <span class="post-meta">Coming soon</span>
+      </div>
+
+      <!-- ARTICLE 5 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" alt="Budgeting" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Budgeting</div>
+          <h2 class="blog-title">How Much House Can You Afford? (Hint: Less Than the Bank Says)</h2>
+          <p class="blog-excerpt">The bank told me I could afford a $600k house. My gut told me $400k. Here is why you should never take the maximum amount the bank offers.</p>
+          <a href="article-5.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
-      <article class="post-card">
-        <div class="post-thumb">📊</div>
-        <div class="post-body">
-          <span class="post-tag">Explainer</span>
-          <h3>Reading Your Amortization Schedule</h3>
-          <p>See how each payment splits between principal and interest.</p>
-          <span class="post-meta">Coming soon</span>
+      </div>
+
+      <!-- ARTICLE 6 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Fixed vs ARM" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Loan Types</div>
+          <h2 class="blog-title">Fixed vs Adjustable: Why I Chose Boring and Safe</h2>
+          <p class="blog-excerpt">An ARM looked tempting with its low introductory rate. But my anxiety couldn't handle the risk of my payment doubling in 5 years. Here's why.</p>
+          <a href="article-6.html" class="read-more">Read Story &rarr;</a>
         </div>
-      </article>
+      </div>
+
+      <!-- ARTICLE 7 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Amortization" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Mortgage Math</div>
+          <h2 class="blog-title">The Ugly Truth About Amortization Schedules</h2>
+          <p class="blog-excerpt">I paid $18,000 in the first year but my loan balance only dropped by $3,000. Where did the rest of the money go? Let me show you.</p>
+          <a href="article-7.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 8 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Refinancing" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Refinancing</div>
+          <h2 class="blog-title">Refinancing: When It Makes Sense and When It's a Trap</h2>
+          <p class="blog-excerpt">Everyone told me to refinance when rates dropped. But nobody told me about the closing costs. I did the break-even math, and here's what happened.</p>
+          <a href="article-8.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 9 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Bidding War" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Buying Process</div>
+          <h2 class="blog-title">How to Win a Bidding War Without Going Broke</h2>
+          <p class="blog-excerpt">We lost three houses before we won one. The trick wasn't offering the most money. It was being the easiest buyer to work with. Here is our strategy.</p>
+          <a href="article-9.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 10 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Extra Payments" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Wealth Building</div>
+          <h2 class="blog-title">Why I Paid Extra on My Mortgage (And You Should Too)</h2>
+          <p class="blog-excerpt">Paying an extra $100 a month seemed pointless. But when I ran the numbers, I realized it would save me 5 years of payments and $60,000 in interest.</p>
+          <a href="article-10.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 11 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Escrow" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Homeownership</div>
+          <h2 class="blog-title">Escrow Accounts Explained: Why Your Payment Goes Up</h2>
+          <p class="blog-excerpt">Your mortgage payment is $2,000. Next year, it's $2,200. You didn't change anything. Welcome to the confusing world of escrow analysis.</p>
+          <a href="article-11.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 12 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80" alt="Inspection" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Home Inspection</div>
+          <h2 class="blog-title">The Danger of Waiving a Home Inspection</h2>
+          <p class="blog-excerpt">In a hot market, buyers waive inspections to win bids. I almost did it. If I had, I would have bought a house with a cracked foundation. Don't do it.</p>
+          <a href="article-12.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 13 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Credit Score" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Credit</div>
+          <h2 class="blog-title">Understanding Your Credit Score Before Buying</h2>
+          <p class="blog-excerpt">A 40-point difference in my credit score cost me $200 extra a month. Here is how I fixed my credit in 90 days to get a better mortgage rate.</p>
+          <a href="article-13.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 14 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Paperwork" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Closing Day</div>
+          <h2 class="blog-title">What to Expect on Closing Day (It's Not What You Think)</h2>
+          <p class="blog-excerpt">I thought closing day was just signing a few papers and getting the keys. It was a 3-hour marathon of confusion. Here is how to prepare.</p>
+          <a href="article-14.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE 15 -->
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" alt="Mistakes" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Personal Story</div>
+          <h2 class="blog-title">5 Mistakes I Made During My First Home Purchase</h2>
+          <p class="blog-excerpt">I wish someone had told me these things before I signed the dotted line. Learn from my pain so you don't make the same expensive errors.</p>
+          <a href="article-15.html" class="read-more">Read Story &rarr;</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a><p>Free, accurate mortgage tools to help you make confident home-buying decisions.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html">Calculator</a><a href="how-it-works.html">How It Works</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> MortgagePro. All rights reserved.</p>
-      <p class="disclaimer">Estimates only. Not financial advice.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved.</p>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
