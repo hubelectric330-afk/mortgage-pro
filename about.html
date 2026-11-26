@@ -1,97 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — MortgagePro</title>
-  <meta name="description" content="Learn about MortgagePro's mission to make mortgage planning simple and transparent." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us: The Story Behind SmartLoanCalc</title>
+  <meta name="description" content="Read the personal story of why SmartLoanCalc was built. We are an independent, ad-supported tool created by a real homebuyer, for real homebuyers.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXE8TE3PMN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XXE8TE3PMN');
-</script>
   
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* PAGE HEADER */
+    .page-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .page-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .page-header p { color: #64748b; font-size: 18px; max-width: 800px; margin: 0 auto; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .page-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a>
-      <nav class="nav" id="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="faq.html">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="about.html" class="active">About</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </nav>
       <div class="header-actions">
-        <a href="index.html#calculator" class="btn btn-primary btn-sm">Calculate Now</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>About MortgagePro</h1>
-      <p>We believe everyone deserves clear, honest tools to plan their biggest financial decision.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="stats">
-      <div class="stat"><div class="num">100%</div><div class="lbl">Free to use</div></div>
-      <div class="stat"><div class="num">0</div><div class="lbl">Sign-ups required</div></div>
-      <div class="stat"><div class="num">3s</div><div class="lbl">Instant estimates</div></div>
-      <div class="stat"><div class="num">24/7</div><div class="lbl">Always available</div></div>
-    </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>About Us: The Story Behind the Numbers</h1>
+    <p>I built SmartLoanCalc because I got tired of feeling like an idiot in the mortgage process. This is a tool for real people, built by someone who has been exactly where you are right now.</p>
   </div>
 
-  <article class="prose">
-    <h2>Our Mission</h2>
-    <p>Buying a home is one of the most important financial decisions most people will ever make — yet the process is often confusing and opaque. MortgagePro exists to change that. We build simple, transparent tools that help you understand exactly what you're getting into before you sign on the dotted line.</p>
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+    
+    <p>I’m going to be completely honest with you, and it’s a bit embarrassing. Before my wife and I bought our first home, I thought I was pretty good with money. I paid my bills on time. I had a 401(k). I knew how to budget for groceries. But the first time I sat across the desk from a mortgage lender, I realized I knew absolutely nothing about real estate finance.</p>
+    
+    <p>The lender, let’s call him Gary, was a fast talker. He threw around terms like "origination fees," "escrow cushions," "amortization schedules," and "PMI." I just nodded along, trying to look smart. I didn't want to ask questions because I felt like I should already know this stuff. By the time I left his office, I had signed a stack of papers and committed to a 30-year loan that I barely understood.</p>
+    
+    <p>A few weeks later, when the first mortgage bill arrived, I got a reality check. The payment was significantly higher than what I thought I had agreed to. I felt sick to my stomach. I felt like I had been tricked.</p>
 
-    <h2>What We Offer</h2>
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80" alt="Person doing mortgage math on a calculator" class="article-img">
+
+    <p>That frustration—that feeling of being at a massive disadvantage—is exactly why SmartLoanCalc exists. I spent the next two years obsessively learning everything I could about mortgages. I read the Consumer Financial Protection Bureau (CFPB) guidelines. I talked to honest loan officers. I learned the formulas. I learned how the banks actually make their money.</p>
+    
+    <p>I realized that the system is not designed to help the buyer. It is designed to confuse the buyer. The jargon, the hidden fees, the complicated math—it’s all meant to make you give up and just sign on the dotted line.</p>
+    
+    <p>I decided I had to do something about it. I built SmartLoanCalc to be the antidote to that confusion.</p>
+
+    <h2>Who Am I?</h2>
+    <p>I am not a bank. I am not a mortgage broker. I am not a real estate agent trying to sell you a house so I can get a commission. I am just a regular guy who bought a house, made some expensive mistakes, and decided to help others avoid them.</p>
+    
+    <p>I don’t have a fancy corporate office. I run this website from my home office (usually late at night, after my kids are asleep). I built this calculator from scratch because I wanted a tool that was fast, accurate, and—most importantly—private.</p>
+
+    <div class="callout">
+      "I don't care about selling your data or getting your email address. I just want you to know the truth about your mortgage before you sign."
+    </div>
+
+    <h2>Why We Are Different: No Leads, No Spam</h2>
+    <p>Have you ever used a mortgage calculator online and then suddenly started getting spam emails and phone calls from lenders? That happens because most websites are "Lead Generation" sites. They give you a "free" tool, but they require your personal information to use it. Once you hit "Submit," they sell your info to the highest bidder.</p>
+    
+    <p>I hated that experience, so I made sure SmartLoanCalc does not do that. We will never ask for your phone number to calculate your mortgage. We will never ask for your email address to see the amortization schedule. All the math on this website happens directly in your web browser. It never touches our servers. We don't store your data. We don't sell it. We don't want it.</p>
+
+    <h2>The Core Features (And Why I Built Them)</h2>
+    <p>Every feature on this website was born out of a specific frustration I experienced during my home-buying journey. I didn't add these features because a marketing team told me to; I added them because they are necessary.</p>
+
+    <h3>1. The Instant, Real-Time Calculator</h3>
+    <p>When I was shopping for loans, I wanted to test a bunch of different scenarios. What if the interest rate was 6.5% instead of 7%? What if we put down 15% instead of 20%? What if the house was $20,000 cheaper? Testing these scenarios on most websites was a nightmare. I had to fill out a form, reload the page, and wait for the results.</p>
+    <p>Our calculator updates instantly as you type. You can slide the down payment percentage up and down and watch the monthly payment change in real-time. It gives you the power to play with the numbers and find a scenario that fits your budget perfectly.</p>
+
+    <h3>2. The Full Breakdown (No Hidden Costs)</h3>
+    <p>This is my biggest pet peeve in the mortgage industry. When you look at a house on Zillow, the estimated payment only shows Principal and Interest (P&I). They don't show you taxes. They don't show you insurance. They don't show you HOA fees.</p>
+    <p>When I bought my house, Gary the lender told me my payment would be $1,500. Because of taxes and insurance, it was actually $2,100. I almost had a panic attack.</p>
+    <p>Our calculator forces you to look at the real number. If you click "Advanced," you can add property taxes, insurance, HOA fees, and PMI. Our pie chart visually shows you exactly how much money is going to the bank versus the government versus the insurance company. You deserve to know the truth before you commit.</p>
+
+    <h3>3. The Amortization Schedule</h3>
+    <p>Did you know that in the first year of a 30-year mortgage, almost 80% of your monthly payment goes toward interest, and only 20% goes toward paying off the actual house? I didn't know that until a year after I bought my house. When I finally looked at the amortization schedule, I was furious.</p>
+    <p>I built our Amortization View feature because I want you to see exactly how the bank is front-loading their profit. Once you see it, you can take control. You can make extra payments to the principal and save tens of thousands of dollars in interest. Knowledge is power, and this table gives you that power.</p>
+
+    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1000&q=80" alt="Detailed breakdown of mortgage costs" class="article-img">
+
+    <h2>How We Keep the Lights On</h2>
+    <p>You might be wondering: if we don't sell your data and we don't charge a subscription fee, how does this website survive? It's a fair question.</p>
+    <p>We keep SmartLoanCalc running 100% free by displaying advertisements through Google AdSense. That's it. You will see some ads on the page, and the ad networks pay us a small amount of money based on impressions and clicks. </p>
+    <p>I believe this is a fair exchange. You get a premium, accurate mortgage calculator and helpful, human-written educational content. In return, you tolerate a few ads. It means you don't have to pay a dime, and I can keep the website online.</p>
+    <p>I am completely transparent about this because I believe in honesty. We are not hiding behind a fake "non-profit" label or a shady lead-generation scheme. We are an ad-supported tool built by a guy who just wants to help people.</p>
+
+    <h2>Our Mission and Values</h2>
+    <p>When you use SmartLoanCalc, you aren't just using a calculator. You are using a tool built on three core values:</p>
+    
     <ul>
-      <li>A fast, accurate mortgage calculator with full payment breakdowns</li>
-      <li>Clear explanations of the formulas and concepts behind the numbers</li>
-      <li>A visual amortization schedule so you can see your loan over time</li>
-      <li>Straightforward guides and FAQs — no jargon, no upsells</li>
+      <li><strong>Transparency:</strong> We will never hide fees, and we will always show you the full breakdown of your payment. No math is hidden behind a curtain.</li>
+      <li><strong>Privacy:</strong> Your financial data is yours. We don't ask for your name, your email, or your phone number. You can use our tools with complete peace of mind.</li>
+      <li><strong>Education:</strong> We don't just give you a number; we teach you how that number was calculated. Our articles, guides, and FAQ page are designed to make you a smarter, more confident borrower.</li>
     </ul>
 
-    <h2>Our Principles</h2>
-    <h3>Transparency</h3>
-    <p>We show our work. Every formula, every assumption, every input is visible to you.</p>
-    <h3>Privacy</h3>
-    <p>All calculations run in your browser. We don't collect or store your financial data.</p>
-    <h3>Simplicity</h3>
-    <p>Powerful tools don't have to be complicated. We design for clarity first.</p>
+    <p>I built this tool for my younger self—the guy sitting in Gary's office, feeling confused and overwhelmed. I built it for my friends who call me asking for mortgage advice. And I built it for you, because buying a home should be an exciting milestone, not a nightmare of confusion and hidden fees.</p>
 
-    <h2>Important Disclaimer</h2>
-    <p>MortgagePro is an educational tool. The estimates it provides are for planning purposes only and do not constitute financial, legal, or lending advice. Always consult a licensed mortgage professional before making decisions.</p>
+    <h2>A Note on Accuracy</h2>
+    <p>I have put hundreds of hours into ensuring this calculator is mathematically accurate. We use the standard industry formulas. However, no online calculator can be 100% exact. Your lender will have slightly different numbers based on daily interest accrual, specific lender fees, and how they handle escrow.</p>
+    <p>Please use our calculator for planning and research. Don't treat it as a final Loan Estimate. Once you are ready to make an offer, get a real Loan Estimate from a lender and compare it to the numbers you got here.</p>
+
+    <h2>Get in Touch</h2>
+    <p>If you have questions, found a bug in the calculator, or just want to share your own home-buying story, I would love to hear from you. I read every message personally (I usually reply within 24-48 hours).</p>
+    
+    <p>You can reach me at: <strong><a href="mailto:support@smartloancalc.online">support@smartloancalc.online</a></strong></p>
+    
+    <p>Thank you for trusting SmartLoanCalc. Good luck on your journey to homeownership. You've got this.</p>
+    
+    <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— The Founder of SmartLoanCalc</p>
+
   </article>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-mark">M</span><span>Mortgage<span class="logo-accent">Pro</span></span></a><p>Free, accurate mortgage tools to help you make confident home-buying decisions.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html">Calculator</a><a href="how-it-works.html">How It Works</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> MortgagePro. All rights reserved.</p>
-      <p class="disclaimer">Estimates only. Not financial advice.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
