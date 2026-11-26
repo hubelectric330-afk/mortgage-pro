@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Mistakes I Made During My First Home Purchase | SmartLoanCalc</title>
+  <meta name="description" content="I bought my first home and made five mistakes that cost me thousands of dollars. Here's my honest story so you can avoid the same errors I made.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
 
+    /* ARTICLE HEADER */
+    .article-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .article-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .article-meta { color: #64748b; font-size: 15px; font-weight: 600; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .warning { background: #fef2f2; border-left: 5px solid #ef4444; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; color: #7f1d1d; }
+
+    /* TABLE STYLE */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 16px; }
+    .compare-table th, .compare-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .compare-table tr:hover { background: #f8fafc; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .article-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Calculator</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <h1>5 Mistakes I Made During My First Home Purchase</h1>
+    <div class="article-meta">By A Regular Homebuyer | Updated November 2026 | 13 Min Read</div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p>I bought my first home at thirty-one, and I was so proud of myself. I had saved for years, I had done my research, and I walked into the process feeling ready. And then I made a series of mistakes that cost me thousands of dollars, stressed me out for months, and taught me lessons I wish I had learned before I signed anything. I'm sharing them now because I know I'm not the only one. Most first-time buyers make at least some of these mistakes, and the ones who don't usually had someone warn them first.</p>
+
+    <p>This isn't a story about a disaster. We got the house, and we love it. But looking back, there are five things I did wrong that I would absolutely do differently if I could go back. If you're about to buy your first home, I hope reading this saves you some of the pain and expense I went through.</p>
+
+    <h2>Mistake 1: I Fell in Love With the First House I Saw</h2>
+
+    <p>I had seen maybe three houses when we walked into the one that became our home. It had a big kitchen, a sunny living room, and a backyard that was perfect for our dog. I loved it immediately. I stopped looking at other houses. I stopped comparing. I stopped thinking critically. I had already mentally moved in before we even made an offer.</p>
+
+    <p>That was a mistake. When you fall in love with a house, you lose your ability to negotiate. You overlook flaws because you want it so badly. You agree to terms you wouldn't otherwise accept because you're afraid of losing it. And you don't even look at other houses that might have been a better fit or a better deal.</p>
+
+    <p>In our case, the house had a few issues that I ignored because I was so enamored with it. The windows were old. The kitchen, while big, had been updated with cheap materials. The basement had a slight musty smell that I convinced myself was nothing. I didn't ask questions. I didn't push back. I just wanted it.</p>
+
+    <div class="callout">
+      Falling in love with a house is the fastest way to overpay. The best buyers stay a little detached until the deal is closed. It's okay to love the house. But don't let that love stop you from asking hard questions, negotiating, or walking away if the numbers don't work.
+    </div>
+
+    <h2>Mistake 2: I Didn't Shop Around for a Mortgage</h2>
+
+    <p>I got a pre-approval from one lender, and I used that same lender for the actual loan. I didn't compare rates. I didn't check with a credit union. I didn't talk to a mortgage broker. I just went with the first lender I found, because I assumed the rates were roughly the same everywhere and I didn't want to complicate things.</p>
+
+    <p>That was a costly mistake. About six months after we closed, I found out that a coworker with a similar loan and a similar credit score had gotten a rate that was nearly half a percent lower than mine. On our loan, that half a percent difference would have saved us over $30,000 in interest. I had left $30,000 on the table because I didn't want to spend a few hours comparing rates.</p>
+
+    <p>Here's what I learned. Mortgage rates vary more than you'd think between lenders. Even a small difference in the rate can mean thousands of dollars over the life of the loan. And comparing rates doesn't hurt your credit score much, as long as you do all your rate shopping within a short window of time. It's a few hours of work for a potential six-figure savings over thirty years. That's a deal worth making.</p>
+
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80" alt="Person comparing mortgage rates and documents" class="article-img">
+
+    <h2>Mistake 3: I Underestimated the Cost of Owning a Home</h2>
+
+    <p>When we bought the house, we ran the numbers on the mortgage, the taxes, the insurance, and the closing costs. We thought we were being thorough. But we completely underestimated the ongoing costs of owning a home. We didn't budget for maintenance. We didn't budget for repairs. We didn't budget for the little things that add up.</p>
+
+    <p>Within the first year, we spent over $6,000 on things we hadn't planned for. The water heater broke. The washing machine died. The gutters needed cleaning. The backyard fence had to be repaired. None of these were catastrophic, but they added up quickly, and they put pressure on a budget that was already tight.</p>
+
+    <p>Here's a table I wish I had made before we bought the house.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Cost</th>
+          <th>What We Budgeted</th>
+          <th>What We Actually Spent (Year 1)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Homeowners Insurance</td>
+          <td>$1,400</td>
+          <td>$1,900</td>
+        </tr>
+        <tr>
+          <td>Property Taxes</td>
+          <td>$3,600</td>
+          <td>$3,800</td>
+        </tr>
+        <tr>
+          <td>Maintenance and Repairs</td>
+          <td>$0</td>
+          <td>$3,200</td>
+        </tr>
+        <tr>
+          <td>Utilities (new to us)</td>
+          <td>$150/month</td>
+          <td>$250/month</td>
+        </tr>
+        <tr>
+          <td>Yard and Landscaping</td>
+          <td>$0</td>
+          <td>$1,200</td>
+        </tr>
+        <tr>
+          <td><strong>Total Year 1 Extra</strong></td>
+          <td><strong>~$0</strong></td>
+          <td><strong>~$7,500</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We were not prepared for that $7,500. It came out of our savings, and it delayed some of the other things we wanted to do. If we had budgeted for it upfront, we would have felt much more comfortable and made better choices along the way.</p>
+
+    <div class="warning">
+      <strong>The one percent rule I wish I had known:</strong> A common rule of thumb is to budget about 1% of your home's value per year for maintenance. On a $350,000 house, that's $3,500 a year, or about $290 a month. That's a real cost, and it should be part of your budget from day one.
+    </div>
+
+    <h2>Mistake 4: I Waived the Home Inspection</h2>
+
+    <p>I've written about this mistake before, but it's worth repeating here because it was the most expensive mistake I made. In a competitive market, we waived the inspection to make our offer more attractive. The house looked great, and we convinced ourselves that nothing could be wrong.</p>
+
+    <p>Within two years, we found out the roof was at the end of its life, the HVAC system was over twenty years old, and there was a slow leak in the basement that had been hidden behind new drywall. The repairs cost us over $20,000. Every single one of those problems would have been caught by a competent home inspector. We saved $500 upfront and paid $20,000 later.</p>
+
+    <p>I understand the pressure to waive the inspection in a hot market. But there are better ways to stay competitive without giving up the protection. You can do an information-only inspection, where you inspect for your own knowledge but agree not to ask for repairs. You can bring a contractor friend to the open house. You can keep the contingency and offer a slightly higher price. Any of those are better than waiving the inspection entirely.</p>
+
+    <div class="callout">
+      The inspection is not a formality. It's your best chance to understand what you're actually buying. Skipping it is the single most expensive shortcut in the home-buying process.
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="House exterior representing the home buying process" class="article-img">
+
+    <h2>Mistake 5: I Didn't Read the Fine Print</h2>
+
+    <p>I'm not a details person by nature. When we sat down to sign the closing documents, I signed where they told me to sign and initialed where they told me to initial. I didn't read the terms carefully. I didn't ask questions. I trusted that everything was standard and that the professionals in the room had my best interests in mind.</p>
+
+    <p>About a year later, I found out that our loan had a prepayment penalty. It was small, but I had no idea it existed. I also discovered that our escrow account was set up with a larger cushion than I expected, which meant our monthly payment was slightly higher than it needed to be. I also realized that our title insurance policy had a few exclusions I didn't understand. None of these were disasters, but they were all things I would have asked about if I had taken the time to read the fine print.</p>
+
+    <p>Here's what I wish I had done. I wish I had read the Closing Disclosure carefully three days before closing, when it arrived. I wish I had highlighted the parts I didn't understand and asked my loan officer to explain them. I wish I had asked for a plain-English summary of every document I signed. The closing attorney is there to answer your questions. You're not being a burden. You're being a responsible buyer.</p>
+
+    <h2>What I Would Do Differently If I Could Go Back</h2>
+
+    <p>Looking back, here are the changes I would make to my first home purchase.</p>
+
+    <ul>
+      <li><strong>I would look at more houses before falling in love with one.</strong> I'd see at least ten houses before making an offer. That would have given me a better sense of what the market looked like and what I could actually afford.</li>
+      <li><strong>I would shop around for a mortgage.</strong> I'd get quotes from at least three lenders, including a credit union and a mortgage broker. A few hours of work could have saved me $30,000 or more.</li>
+      <li><strong>I would budget for the true cost of owning a home.</strong> I'd set aside 1% of the home's value per year for maintenance and repairs, plus extra for utilities and yard work.</li>
+      <li><strong>I would never waive the inspection.</strong> I'd keep the inspection contingency and find other ways to make my offer competitive. The information is worth more than the risk.</li>
+      <li><strong>I would read the fine print.</strong> I'd read the Closing Disclosure carefully and ask questions about anything that didn't make sense. I'd take my time with the documents, even if it made the process slower.</li>
+    </ul>
+
+    <div class="callout">
+      The mistakes I made didn't ruin my life, and they don't have to ruin yours. But they cost me money, time, and stress that I didn't need to spend. If you learn from my mistakes, you can avoid the same pain and keep more of your money where it belongs: in your pocket.
+    </div>
+
+    <h2>The Good News</h2>
+
+    <p>I want to end on a positive note, because even with all these mistakes, buying our first home was one of the best decisions we ever made. We love our house. We love our neighborhood. We've made it our own, one project at a time. And looking back, the mistakes I made were all things I could fix or learn from. They didn't define the experience. They just made it more expensive than it needed to be.</p>
+
+    <p>If you're about to buy your first home, you'll probably make some mistakes too. That's normal. Nobody gets through this process perfectly. But if you learn from the mistakes of others, you can avoid the big ones, the expensive ones, the ones that really hurt. That's what this article is for. I'm sharing my story so you can have a better one.</p>
+
+    <p>Take your time. Ask questions. Run the numbers. Read the fine print. And remember that the goal isn't just to buy a house. The goal is to buy a house you can actually afford to live in, maintain, and enjoy for years to come. That's the real win.</p>
+
+    <p>That's my story. I hope it helps you avoid the five mistakes I made and have a smoother, smarter first home purchase.</p>
+
+    <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— A Regular Homebuyer (and SmartLoanCalc Reader)</p>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
