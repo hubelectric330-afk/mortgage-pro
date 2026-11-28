@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartLoanCalc — Professional Mortgage Calculator</title>
-  <meta name="description" content="Calculate your monthly mortgage payment instantly. Professional, accurate, and easy-to-use mortgage calculator with taxes, insurance, PMI, and HOA." />
+  <title>SmartLoanCalc — Free Mortgage Payment Calculator</title><link rel="canonical" href="https://smartloancalc.online/">
+  <meta name="description" content="Free mortgage payment calculator with taxes, insurance, PMI and HOA, plus a year-by-year amortization schedule. No email required." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Chart.js for the visual graph -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   
   <style>
     /* ===== BASE STYLES ===== */
@@ -131,8 +131,6 @@
         <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
       </nav>
       
       <div class="header-actions">
@@ -235,7 +233,7 @@
           <div class="result-main">
             <div class="label">Estimated Monthly Payment</div>
             <div class="amount" id="monthlyTotal">$0</div>
-            <div class="sub">Principal, interest, tax, insurance & HOA</div>
+            <div class="sub">Principal, interest, tax, insurance, PMI (est.) & HOA</div>
           </div>
 
           <div class="chart-container">
@@ -285,96 +283,7 @@
   <section class="article-section">
     <div class="article-wrap">
       
-      <h1>Why I Built SmartLoanCalc: The Ugly Truth About Mortgage Math</h1>
-      
-      <p>I still remember the exact moment I realized the mortgage industry was designed to confuse me. It was a sweltering Tuesday in July, three years ago. My wife, Sarah, and I were sitting at our tiny kitchen table. Between us was a stack of papers—Loan Estimates from three different banks—and a half-eaten pizza. We were trying to buy our first house. We had saved for five years. We had done everything "right." But looking at those numbers, I felt like I was trying to read a foreign language with a blindfold on.</p>
-      
-      <p>I remember asking Sarah, "Wait, the agent told us the payment would be $1,500. Why does this paper say $2,180?"</p>
-      
-      <p>She looked at it. "I don't know. Maybe it's a typo?"</p>
-      
-      <p>It wasn't a typo. It was the beginning of my very harsh education in the world of home financing. Over the next few months, I got lied to, misled, spammed, and nearly taken advantage of by lenders who saw me as nothing more than a dollar sign with a pulse. We eventually closed on our house, but the process left a bad taste in my mouth. I was angry. I was frustrated. And I knew there had to be a better way.</p>
-
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Real-time financial data" class="article-img">
-
-      <p>That anger is exactly why SmartLoanCalc exists. I didn't build this to make a quick buck. I built it because I wish someone had built it for me when I was sitting at that kitchen table in July. Today, I want to pull back the curtain. I want to talk about the 4 core features of this website, not like a corporate robot, but like a guy who has been in the trenches, made the mistakes, and wants to save you from doing the same.</p>
-
-      <h2>1. Instant Results: Stop Giving Away Your Privacy for a Number</h2>
-      <p>Have you ever googled "mortgage calculator" and clicked on one of the big-name sites? Let me guess what happened. You typed in your home price. You typed in your down payment. And then, before you could see a single number, a popup appeared: <em>"Enter your email and phone number to see your results!"</em></p>
-      
-      <p>If you were naive like me, you probably did it. You gave them your real phone number. And what happened next? Within exactly 4 minutes, your phone started buzzing. And it didn't stop. I had loan officers calling me during work meetings, calling me during dinner, leaving voicemails with fake urgency saying, "Hey buddy, rates are about to go up, call me back right now!"</p>
-      
-      <p>What those websites don't tell you is that they aren't really mortgage companies. They are "Lead Generation" sites. Their business model is harvesting your personal data and selling it to the highest bidder. Your phone number is worth about $30 to them. They don't care about your financial planning; they care about the commission.</p>
-      
-      <p>When I built SmartLoanCalc, I made a hard rule: <strong>We will never ask for your email or phone number to show you a calculation.</strong> Not ever.</p>
-      
-      <p>That’s why the very first feature of this site is <strong>Instant Results</strong>. When you type a number into the "Home Price" box, the math happens instantly. Why? Because our calculator uses JavaScript that runs entirely inside your own web browser. It doesn't send a signal to a server. It doesn't wait for a database to respond. It just does the math, right there on your screen, in less time than it takes to blink.</p>
-      
-      <p>When Sarah and I were house hunting, we must have run 100 different scenarios. <em>What if we went $10,000 over budget? What if we got a 6.0% rate instead of a 6.5% rate? What if we put down 15% instead of 20%?</em> With this tool, you can run those scenarios in seconds. You don't have to reload the page. You don't have to submit a form. You just adjust the numbers, and you get the truth. You are in control, not some aggressive loan officer trying to hit his monthly quota.</p>
-
-      <h2>2. Full Breakdown: The $700 Shock That Almost Ruined My Budget</h2>
-      <p>Let's talk about the biggest scam in real estate: the "Principal and Interest" illusion.</p>
-      
-      <p>When you look at a house on Zillow or Realtor.com, the little monthly payment figure they show you is a lie. Well, it's not a lie, but it's just half the truth. They show you P&I (Principal and Interest). They don't show you the taxes. They don't show you the insurance. And they definitely don't show you PMI.</p>
-      
-      <p>When we bought our house, our lender, a guy named Gary, told us our P&I would be $1,500 a month. "You can afford that," Gary said, smiling. And we could. But Gary didn't mention the property taxes. He didn't mention the homeowners insurance. When the first actual bill came from our mortgage servicer, the total was $2,180.</p>
-      
-      <p>I nearly had a heart attack. I called the bank, furious. "Why is it $680 higher than what Gary told us?!"</p>
-      
-      <p>The woman on the phone sighed. She had clearly dealt with this before. "Sir, your escrow account. It covers your county property taxes and your insurance. Gary only quoted you the Principal and Interest."</p>
-      
-      <p>We had to cancel our summer vacation that year to make up for the difference. It was humiliating. It was stressful. And it was entirely avoidable if I had used a tool with a <strong>Full Breakdown</strong>.</p>
-      
-      <p>When you use the SmartLoanCalc calculator, we don't let you ignore the hidden costs. If you click on "Advanced," you can input your estimated property taxes, your insurance premiums, and your HOA fees. We even calculate a realistic PMI estimate if your down payment is under 20%.</p>
-      
-      <p>Why? Because I want you to see the <em>real</em> number. The number that matters. Let's look at a real example. You buy a $400,000 house with 5% down. The P&I might be $2,500. But when you add $600 for property taxes, $150 for insurance, $200 for PMI, and $100 for HOA, your true monthly payment is $3,550.</p>
-      
-      <p>If you can't afford $3,550, you cannot afford that house. Period. It's better to know that before you sign the contract than to find out when the first bill arrives. Our detailed pie chart visually shows you exactly where every dollar of your money is going. No surprises. No hidden fees. Just brutal, honest transparency.</p>
-
-      <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1000&q=80" alt="Detailed breakdown of mortgage costs" class="article-img">
-
-      <h2>3. Amortization View: The Day I Realized I Was Renting From the Bank</h2>
-      <p>I always thought that when you buy a house, you slowly start owning more of it every month. You pay the mortgage, the principal goes down, and you own more equity. Right?</p>
-      
-      <p>Technically yes, but the reality is brutal. The first time I actually looked at my Amortization Schedule, I was furious. I felt like the bank had tricked me.</p>
-      
-      <p>For the first year of my mortgage, I paid about $18,000. Do you know how much my loan balance went down? Only $3,000. The other $15,000 went straight into the bank's pocket as interest. I was basically renting my house from the bank, just with extra steps.</p>
-      
-      <p>Why does this happen? Because mortgages are front-loaded. The bank wants their profit upfront. So in the early years, almost 80% of your payment goes toward interest, and only 20% goes toward paying off the actual house.</p>
-      
-      <p>If I had known this earlier, I would have done things differently. I would have made extra payments. I would have fought back. That is why I built the <strong>Amortization View</strong> into SmartLoanCalc. It's a feature you won't find on basic calculators, because the banks don't want you to see it. They want you to just pay your bill and not ask questions.</p>
-      
-      <p>With our tool, you can click "View Amortization Schedule" and see a table that shows exactly how your loan breaks down year by year. You can see the massive wall of interest you are paying in years 1 through 10. And more importantly, it shows you the power of extra payments.</p>
-      
-      <p>Let me give you a real example. When I learned about this, I started paying an extra $100 a month towards the principal. That's it. Just $100. It didn't seem like much. But when I ran the math, it shaved 5 years off my 30-year mortgage and saved me over $60,000 in interest. $60,000 that stayed in my pocket instead of the bank's.</p>
-      
-      <p>This tool gives you the power to beat the bank. It shows you that every single dollar matters. When you see the schedule, you become a smarter borrower.</p>
-
-      <h2>4. Private & Free: Why I Refuse to Sell Your Data</h2>
-      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80" alt="Data privacy and security" class="article-img">
-      
-      <p>People always ask me, "If this tool is free, how do you pay for it?"</p>
-      
-      <p>I'll be honest with you. I don't want your data. I don't want to sell it to brokers. I don't want to spam you. The financial data you put into this calculator is incredibly private. You shouldn't have to trade your email address for a simple calculation.</p>
-      
-      <p>We keep this website running 100% free by showing a few ads. That's it. It's a fair trade. You get a premium, accurate tool that protects your privacy, and the ad revenue helps pay for my web hosting and the hours I spend maintaining the code.</p>
-      
-      <p>All the math happens in your browser. When you close the tab, the numbers are gone. We never see them. We never store them. We never sell them. You are safe here. You are not a "lead." You are a person trying to figure out your life, and I respect that.</p>
-
-      <h2>What I Want You to Take Away From This</h2>
-      <p>Buying a home is terrifying. It's one of the biggest financial decisions you will ever make, and the system is designed to confuse you. Lenders use jargon to make things sound better than they are. Real estate agents want a quick sale. And websites want your data.</p>
-      
-      <p>I built SmartLoanCalc to be the antidote to all of that. I built it to be the tool I wish I had sitting at that kitchen table in July.</p>
-      
-      <p>If there is one piece of advice I can give you, it is this: <strong>Do the math yourself.</strong> Don't just trust the number the lender gives you on a napkin. Don't just trust the P&I estimate on Zillow. Put the numbers into our calculator. Look at the Full Breakdown. Look at the Amortization Schedule. See the truth.</p>
-      
-      <p>When you walk into a lender's office with a full understanding of the numbers, they can't take advantage of you. You have the power. You have the knowledge. And you will get a better deal because of it.</p>
-      
-      <p>Good luck out there. You've got this.</p>
-      
-      <p style="font-style: italic; color: #64748b; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">— The SmartLoanCalc Founder</p>
-
-    </div>
+      <h2>About SmartLoanCalc</h2><p>SmartLoanCalc is a free mortgage payment calculator. It estimates your monthly principal and interest, property tax, home insurance, PMI and HOA fees, and shows a year-by-year amortization schedule. Everything is calculated in your browser. We never ask for your email or phone number, and the numbers you type are not sent to us.</p><h2>What the calculator includes</h2><ul><li><strong>Principal and interest</strong>: the standard fixed-rate formula M = P·r(1+r)^n / ((1+r)^n − 1), where r is the monthly rate and n the number of payments.</li><li><strong>Taxes, insurance and HOA</strong>: enter annual tax and insurance and monthly HOA dues. These vary a lot by location, so use your own quotes.</li><li><strong>PMI estimate</strong>: when your down payment is under 20%, we add an estimate of 0.5% of the loan per year. Real PMI commonly ranges from about 0.3% to over 1% depending on credit score and down payment.</li><li><strong>Amortization schedule</strong>: how much principal and interest you pay each year and the balance that remains.</li></ul><h2>A worked example</h2><p>A $400,000 loan at 6.5% over 30 years has a principal-and-interest payment of about $2,528. In month one, about $2,167 goes to interest and about $361 to principal. By around year 15 the split is roughly $1,630 interest and $900 principal. Early payments are mostly interest, which is why extra principal payments early in the loan have such a large effect.</p><h2>Why a payment estimate is not the whole cost</h2><p>Listing sites often show only principal and interest. Property tax, insurance, PMI and HOA fees can add hundreds of dollars a month, so enter them before deciding what you can afford. Compare Loan Estimates from at least three lenders; the lender must provide one within three business days of your application.</p><p>Read more in our <a href="how-it-works.html">How It Works</a> page and <a href="faq.html">FAQ</a>. Authoritative sources include the <a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">CFPB Owning a Home guide</a> and <a href="https://www.hud.gov/topics/buying_a_home" rel="noopener">HUD</a>.</p><p><em>This tool is for education and estimates only and is not financial, legal or tax advice. Your lender's figures will differ.</em></p></div>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -386,13 +295,14 @@
             <span class="logo-mark">S</span>
             <span>Smart<span class="logo-accent">LoanCalc</span></span>
           </a>
-          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+          <p style="color: #94a3b8; font-size: 15px;">Free mortgage tools and educational guides. Not a lender; not financial advice.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="index.html">Calculator</a>
           <a href="how-it-works.html">How It Works</a>
           <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>

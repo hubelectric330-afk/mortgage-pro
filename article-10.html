@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Should You Pay Extra on Your Mortgage? | SmartLoanCalc</title><link rel="canonical" href="https://smartloancalc.online/article-10.html">
+  <meta name="description" content="How extra principal payments shorten a loan and cut interest, and when other priorities may come first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* ARTICLE HEADER */
+    .article-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .article-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .article-meta { color: #64748b; font-size: 15px; font-weight: 600; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .warning { background: #fef2f2; border-left: 5px solid #ef4444; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; color: #7f1d1d; }
+
+    /* TABLE STYLE */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 16px; }
+    .compare-table th, .compare-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .compare-table tr:hover { background: #f8fafc; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .article-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
+<style>.article-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}.article-body th,.article-body td{padding:10px 12px;border-bottom:1px solid #e2e8f0;text-align:left}.article-body th{background:#f8fafc}</style></head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Calculator</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <h1>Should You Pay Extra on Your Mortgage?</h1><div class="article-meta">By SmartLoanCalc | Last reviewed November 2026 | 7 min read</div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body"><h2>What extra payments actually do</h2><p>A standard mortgage charges interest each month on the remaining balance. Any money you send beyond the scheduled payment and have applied to principal lowers that balance immediately. From then on, each month’s interest is calculated on a smaller number, so more of your regular payment goes to principal, and the loan ends sooner. The saving is not a one-time discount: it compounds over every remaining month.</p><p>This is why the same dollar of extra principal is worth more early in a loan than late. Early on the balance is large and many years of interest remain; near the end only a few payments remain to affect.</p><h2>How much do small extra payments save?</h2><p>The table uses a $300,000 loan at 6.5% for 30 years. The regular payment is about $1,896 and total interest on the full schedule is about $382,633.</p><table><thead><tr><th>Extra amount</th><th>New payoff time</th><th>Interest saved</th></tr></thead><tbody><tr><td>+$100/month</td><td>26 yrs 0 mo</td><td>$60,995</td></tr><tr><td>+$200/month</td><td>23 yrs 1 mo</td><td>$103,449</td></tr><tr><td>+$500/month</td><td>17 yrs 6 mo</td><td>$179,759</td></tr><tr><td>One extra payment a year</td><td>24 yrs 2 mo</td><td>$87,256</td></tr></tbody></table><p>The “one extra payment a year” row means adding one-twelfth of a payment to each monthly payment. Even modest additions shorten the loan by years. The effect grows quickly as the extra amount rises.</p><h2>Lump sums: early or late</h2><p>A one-time extra payment of $10,000 made after the first year would shorten the example loan to about 27 years and 5 months and save roughly $50,230 in interest. The same $10,000 paid after year 15 would shorten it to about 28 years and 11 months and save roughly $15,559. Timing matters: the earlier the payment, the more interest it avoids.</p><h2>Before you pay extra: check these</h2><ul><li><strong>Prepayment penalty.</strong> Many home loans have none, but some do. Check your note and Closing Disclosure.</li><li><strong>How the servicer applies the money.</strong> Some servicers apply extra funds to the next scheduled payment unless you mark them as principal-only. Use the payment portal option or write “principal only.”</li><li><strong>Your payment is still due.</strong> Extra principal does not usually let you skip future payments, unless the loan is recast.</li><li><strong>Confirmation.</strong> Check the next statement to see that the balance fell by the extra amount.</li></ul><h2>What to do first</h2><p>Prepaying is not always the best use of spare money. Many households choose to handle other priorities first.</p><ul><li><strong>Emergency fund.</strong> Money paid into your mortgage is hard to get back quickly. Home equity is not cash unless you sell or borrow.</li><li><strong>High-interest debt.</strong> If you carry credit card balances at rates far above your mortgage rate, paying those first usually saves more.</li><li><strong>Employer retirement match.</strong> A match is often an immediate return that a mortgage prepayment cannot beat.</li><li><strong>Other goals.</strong> Education, insurance and a down payment for another purchase may compete for the same cash.</li></ul><p>After those, compare your mortgage rate with what you could reasonably earn elsewhere. Prepaying gives a certain saving equal to your loan rate, while investment returns vary and can be negative. Your risk tolerance and taxes affect the choice. A tax professional can help with how the mortgage interest deduction applies, which only matters if you itemize.</p><h2>Ways to prepay without straining your budget</h2><ul><li>Round each payment up to the next $50 or $100.</li><li>Make one extra payment per year, or split it across months.</li><li>Send part of a bonus, refund or windfall as principal.</li><li>Keep paying the old payment amount after a refinance to a lower rate.</li><li>Raise the extra amount when income rises.</li></ul><p>A fixed habit usually works better than occasional large efforts. Automate it if your servicer allows.</p><h2>Reaching PMI cancellation sooner</h2><p>If you pay PMI, extra principal can bring the balance down to 80% of the original value sooner. On a $285,000 loan at 6.5%, scheduled payments reach the $240,000 mark after about 10 years and 4 months. With an extra $200 a month it comes in about 6 years and 8 months. Read our <a href="article-3.html">PMI guide</a> for how to request cancellation.</p><h2>Mistakes to avoid</h2><ul><li>Paying extra on a loan that has a prepayment penalty without checking the cost.</li><li>Letting extra payments sit as “prepaid” rather than applied to principal.</li><li>Draining your emergency fund to prepay.</li><li>Ignoring higher-rate debt.</li><li>Forgetting that the balance cannot be reached quickly if you need cash.</li></ul><h2>A short checklist</h2><ul><li>Confirm there is no prepayment penalty.</li><li>Decide an amount you can keep up in a bad month.</li><li>Set up principal-only payments.</li><li>Check the next statement.</li><li>Review the plan yearly using the schedule in our <a href="article-7.html">amortization guide</a> and the <a href="index.html">calculator</a>.</li></ul><p>Prepaying is a choice, not an obligation. Done in a way that protects your savings, it can cut years and tens of thousands of dollars from a loan.</p><h2>Extra payments versus saving the same money</h2><p>Suppose you could send $200 a month toward the example loan (paying it off in about 23 years and 1 months) or save $200 a month instead. After 277 months, saving at a hypothetical 4% a year would grow to about $90,828, and at 6% to about $119,243, before taxes, fees or market ups and downs. Prepaying earns a guaranteed saving equal to your loan rate, which cuts about $103,000 of interest in this example, while savings or investments can earn more or less and may be taxed. This simple comparison leaves out that a paid-off mortgage frees the whole payment later and that savings stay accessible. It shows the principle, not a verdict. Your rate, tax situation and comfort with risk decide the better path.</p><h2>Does your interest rate change the answer?</h2><p>Yes. A higher rate means more interest saved per dollar prepaid. The table shows the interest saved by a one-time $10,000 principal payment after the first year on a $300,000, 30-year loan at different rates.</p><table><thead><tr><th>Loan rate</th><th>Interest saved by $10,000 after year 1</th></tr></thead><tbody><tr><td>3.5%</td><td>$16,801</td></tr><tr><td>5.0%</td><td>$30,408</td></tr><tr><td>6.5%</td><td>$50,230</td></tr><tr><td>7.5%</td><td>$67,940</td></tr></tbody></table><p>At low rates the benefit is smaller, and many borrowers prefer to keep cash or invest it. At higher rates, prepaying becomes more attractive, though refinancing may be an option if rates fall later (see <a href="article-8.html">our refinancing guide</a>).</p><h2>Frequently asked questions</h2><ul><li><strong>Will extra payments lower my monthly payment?</strong> Not by themselves. The payment stays the same and the loan ends sooner, unless you recast or refinance.</li><li><strong>Can I pay extra on a loan with PMI or FHA insurance?</strong> Yes. It may help you reach cancellation thresholds sooner, although FHA insurance rules differ.</li><li><strong>Is it better to pay extra every month or once a year?</strong> Monthly is slightly better because the balance falls earlier, but a yearly payment is still effective.</li><li><strong>Should I stop if money gets tight?</strong> Yes. Extra payments are optional. Keep the required payment current.</li><li><strong>Do extra payments help my credit score?</strong> Not directly. Paying on time matters most.</li></ul><h2>Final thoughts</h2><p>Extra payments are a flexible tool. They work best when your emergency fund is full, high-interest debt is gone and the payment does not strain your budget. Check the terms of your loan, direct the money to principal, and review your progress against the schedule once a year.</p><h2>A simple prepayment plan</h2><p>Start by deciding the amount you can add in a tight month, not a good one. Even $50 a month is worthwhile if it is consistent, and you can increase it later. Set it up as a recurring principal-only payment if your servicer allows it, or make a manual payment on the same day as your regular one. After each statement, confirm that the principal balance dropped by the regular principal portion plus your extra amount. If it did not, contact the servicer and ask them to correct the application of funds.</p><h2>Tracking your progress</h2><p>Once a year, compare your balance to the original amortization schedule. The gap shows how far ahead you are and how many months you have cut. Use that information to decide whether to keep the same extra amount, raise it, or redirect the money to another goal such as retirement saving or an emergency fund. Your priorities will change over time, and the plan should change with them. If you refinance, remember that a new loan starts a new schedule, so decide whether to keep paying the old amount to stay on the faster track.</p><h2>When prepaying may not fit</h2><p>If your income is irregular, your job is uncertain or your savings are thin, keep cash available instead. Loans can be paid early at any time, but you cannot easily get the money back. Think of extra payments as something you can add when conditions are good and pause when they are not.</p><h2>Sources and related guides</h2><ul><li><a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">CFPB: Owning a Home</a></li><li><a href="https://www.hud.gov/topics/buying_a_home" rel="noopener">HUD: Buying a Home</a></li><li><a href="article-7.html">How Amortization Schedules Work</a></li><li><a href="article-2.html">15-Year vs 30-Year Mortgages Compared</a></li></ul><p><em>This article is educational and is not financial, legal or tax advice. Examples use rounded, illustrative figures; your rates, costs and rules will differ. Check current requirements with your lender. <a href="about.html">About us</a>.</em></p></article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
