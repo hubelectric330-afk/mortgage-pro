@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mortgage Guides | SmartLoanCalc</title><link rel="canonical" href="https://smartloancalc.online/blog.html">
-  <meta name="description" content="Read real stories, personal experiences, and honest advice about navigating the mortgage process. No jargon, just the truth." />
+  <title>Mortgage Guides: Costs, Loan Types & the Buying Process | SmartLoanCalc</title>
+  <link rel="canonical" href="https://smartloancalc.online/blog.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233b82f6'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Plain-English mortgage guides on payments, PMI, closing costs, escrow, refinancing, credit scores and the home-buying process, with worked examples and official sources." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -67,40 +70,234 @@
       .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
       .page-header h1 { font-size: 32px; }
     }
+  
+    /* ===== SHARED ADDITIONS ===== */
+    .article-body a, .faq-content a, .article-wrap a, .note a { color: #2563eb; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0 30px; font-size: 16px; }
+    .data-table th, .data-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    .data-table th { background: #f8fafc; color: #1e293b; }
+    .table-scroll { overflow-x: auto; }
+    .note { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; font-size: 15px; line-height: 1.6; color: #475569; margin: 20px 0; }
+    .todo { background: #fef08a; padding: 0 4px; border-radius: 3px; color: #713f12; }
+    .page-meta { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+    .calc-note { font-size: 13px; color: #64748b; margin: -8px 0 18px; line-height: 1.5; }
+    img { max-width: 100%; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .blog-group { margin: 55px 0 20px; }
+    .blog-group:first-of-type { margin-top: 10px; }
+    .blog-group h2 { font-size: 28px; color: #0f172a; margin: 0 0 6px; font-weight: 800; }
+    .blog-group p { color: #64748b; margin: 0; }
+    .blog-title a:hover { color: #3b82f6; }
+    .guide-promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-bottom: 25px; }
+    .guide-promise div { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px; font-size: 15px; color: #475569; line-height: 1.6; }
+    .guide-promise strong { display: block; color: #0f172a; margin-bottom: 4px; }
+    .guide-promise a { color: #2563eb; }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
         <span class="logo-mark">S</span>
         <span>Smart<span class="logo-accent">LoanCalc</span></span>
       </a>
-      <nav class="nav" id="navMenu">
+      <nav class="nav" id="navMenu" aria-label="Main">
         <a href="index.html">Calculator</a>
         <a href="how-it-works.html">How It Works</a>
-        <a href="faq.html">FAQ</a>
         <a href="blog.html" class="active">Blog</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
         <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
-        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+        <button class="mobile-toggle" aria-label="Open menu" onclick="document.getElementById('navMenu').classList.toggle('active')">&#9776;</button>
       </div>
     </div>
   </header>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
-    <h1>Mortgage Guides</h1><p>Educational guides on mortgages and home buying.</p>
+    <h1>Mortgage Guides</h1>
+    <p>Practical guides on mortgage payments, costs and the home-buying process. General information, not personal financial advice.</p>
   </div>
 
-  <!-- BLOG GRID -->
-  <div class="container blog-section"><div class="blog-grid"><div class="blog-card"><div class="blog-content"><div class="blog-meta">Mortgage Basics</div><h2 class="blog-title">How to Use a Mortgage Calculator Accurately</h2><p class="blog-excerpt">What each input means and the costs that are easy to leave out.</p><a href="article-1.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Loan Terms</div><h2 class="blog-title">15-Year vs 30-Year Mortgages Compared</h2><p class="blog-excerpt">Payment, total interest and flexibility side by side.</p><a href="article-2.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Costs</div><h2 class="blog-title">PMI: What It Costs and How to Remove It</h2><p class="blog-excerpt">How PMI is priced and when it can end.</p><a href="article-3.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Closing Costs</div><h2 class="blog-title">Closing Costs: What to Budget Beyond the Down Payment</h2><p class="blog-excerpt">Typical fee categories and how to read a Loan Estimate.</p><a href="article-4.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Budgeting</div><h2 class="blog-title">How Much House Can You Afford?</h2><p class="blog-excerpt">Using debt-to-income and the full monthly payment, not just P&I.</p><a href="article-5.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Loan Types</div><h2 class="blog-title">Fixed-Rate vs Adjustable-Rate Mortgages</h2><p class="blog-excerpt">How each works and the risks to weigh.</p><a href="article-6.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Mortgage Math</div><h2 class="blog-title">How Amortization Schedules Work</h2><p class="blog-excerpt">Why early payments are mostly interest, with a worked example.</p><a href="article-7.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Refinancing</div><h2 class="blog-title">Refinancing: When It Can and Cannot Save Money</h2><p class="blog-excerpt">Break-even math and costs to compare.</p><a href="article-8.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Buying Process</div><h2 class="blog-title">Competing in a Bidding War Without Overextending</h2><p class="blog-excerpt">Offer strategies and the financial limits to set first.</p><a href="article-9.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Paying Down</div><h2 class="blog-title">Should You Pay Extra on Your Mortgage?</h2><p class="blog-excerpt">Prepayment effects, and alternatives to compare.</p><a href="article-10.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Homeownership</div><h2 class="blog-title">Escrow Accounts Explained</h2><p class="blog-excerpt">Why a fixed-rate payment can still change.</p><a href="article-11.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Home Inspection</div><h2 class="blog-title">Why Home Inspections Matter</h2><p class="blog-excerpt">What they cover and the risk of waiving one.</p><a href="article-12.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Credit</div><h2 class="blog-title">Credit Scores and Mortgage Rates</h2><p class="blog-excerpt">Score thresholds by loan type and how scores affect pricing.</p><a href="article-13.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Closing Day</div><h2 class="blog-title">What Happens at Closing</h2><p class="blog-excerpt">Documents, timeline and the Closing Disclosure.</p><a href="article-14.html" class="read-more">Read guide &rarr;</a></div></div><div class="blog-card"><div class="blog-content"><div class="blog-meta">Buying Process</div><h2 class="blog-title">Common First-Time Buyer Mistakes</h2><p class="blog-excerpt">Frequent errors and how to avoid them.</p><a href="article-15.html" class="read-more">Read guide &rarr;</a></div></div></div></div>
-<footer class="site-footer">
+  <div class="container blog-section">
+
+    <div class="guide-promise">
+      <div><strong>Worked examples</strong>Every guide uses real numbers you can reproduce in the <a href="index.html#calculator">calculator</a>.</div>
+      <div><strong>Official sources</strong>Rules are checked against the CFPB, HUD and other official resources, linked in each guide.</div>
+      <div><strong>Plain English</strong>Short sections, key takeaways at the top, and no jargon left unexplained.</div>
+      <div><strong>Corrections welcome</strong>Found a mistake? <a href="contact.html">Tell us</a> and we will review and fix it. See <a href="about.html">how we work</a>.</div>
+    </div>
+
+    <div class="blog-group">
+      <h2>Start here</h2>
+      <p>New to mortgages? Read these first.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Hand using a calculator on paperwork" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Mortgage Basics</div>
+          <h3 class="blog-title"><a href="article-1.html" style="color:inherit;text-decoration:none;">How to Use a Mortgage Calculator Accurately: 5 Common Mistakes</a></h3>
+          <p class="blog-excerpt">Five common input mistakes that make a payment estimate too low (rate, taxes and insurance, PMI, HOA dues and total interest), with worked examples.</p>
+          <a href="article-1.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" alt="Budget papers and calculator" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Budgeting</div>
+          <h3 class="blog-title"><a href="article-5.html" style="color:inherit;text-decoration:none;">How Much House Can You Afford? Pre-Approval vs a Comfortable Budget</a></h3>
+          <p class="blog-excerpt">Why a lender's pre-approval is a ceiling rather than a budget, and two ways to find a payment you can live with.</p>
+          <a href="article-5.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Closing cost documents and calculator" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Closing Costs</div>
+          <h3 class="blog-title"><a href="article-4.html" style="color:inherit;text-decoration:none;">Closing Costs: What They Include and How Much to Save</a></h3>
+          <p class="blog-excerpt">What closing costs include, an illustrative worksheet, and ways to lower your cash to close.</p>
+          <a href="article-4.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-group">
+      <h2>Choosing a loan</h2>
+      <p>Terms, rates and how the payment is built.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Modern house exterior" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Loan Terms</div>
+          <h3 class="blog-title"><a href="article-2.html" style="color:inherit;text-decoration:none;">15-Year vs 30-Year Mortgage: Payment, Interest and Which Fits You</a></h3>
+          <p class="blog-excerpt">Compares payment and total interest on a $300,000 loan at 6.5%, and shows how extra payments on a 30-year loan can act as a middle path.</p>
+          <a href="article-2.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Home loan documents" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Loan Types</div>
+          <h3 class="blog-title"><a href="article-6.html" style="color:inherit;text-decoration:none;">Fixed-Rate vs Adjustable-Rate Mortgage (ARM): How They Differ</a></h3>
+          <p class="blog-excerpt">How fixed-rate and adjustable-rate mortgages differ, how index, margin and caps work, and a worked example of an ARM payment adjusting.</p>
+          <a href="article-6.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Financial charts on a desk" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Mortgage Math</div>
+          <h3 class="blog-title"><a href="article-7.html" style="color:inherit;text-decoration:none;">Amortization Explained: Where Your Mortgage Payment Goes</a></h3>
+          <p class="blog-excerpt">How amortization splits each payment between interest and principal, and why equity builds slowly in the early years.</p>
+          <a href="article-7.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80" alt="House keys" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Hidden Costs</div>
+          <h3 class="blog-title"><a href="article-3.html" style="color:inherit;text-decoration:none;">What Is PMI, What Does It Cost, and How Can You Remove It?</a></h3>
+          <p class="blog-excerpt">What private mortgage insurance is, what it can cost, and how and when it can be removed.</p>
+          <a href="article-3.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-group">
+      <h2>Paying less over time</h2>
+      <p>Ways to reduce interest and monthly cost.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Coins and savings" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Paying Down Debt</div>
+          <h3 class="blog-title"><a href="article-10.html" style="color:inherit;text-decoration:none;">Extra Mortgage Payments: How Much Can You Save?</a></h3>
+          <p class="blog-excerpt">What happens when you add $100, $250 or $500 a month to principal, and when extra payments are not the best use of cash.</p>
+          <a href="article-10.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Refinancing paperwork" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Refinancing</div>
+          <h3 class="blog-title"><a href="article-8.html" style="color:inherit;text-decoration:none;">Refinancing: How to Calculate Your Break-Even Point</a></h3>
+          <p class="blog-excerpt">How to calculate a refinance break-even point and when refinancing helps or hurts.</p>
+          <a href="article-8.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Home exterior with property documents" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Homeownership</div>
+          <h3 class="blog-title"><a href="article-11.html" style="color:inherit;text-decoration:none;">Escrow Accounts Explained: Why Your Payment Can Change</a></h3>
+          <p class="blog-excerpt">How escrow accounts work, why payments change each year, and what you can do about an increase.</p>
+          <a href="article-11.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-group">
+      <h2>Buying process</h2>
+      <p>From offers and inspections to closing day.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="House for sale" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Buying Process</div>
+          <h3 class="blog-title"><a href="article-9.html" style="color:inherit;text-decoration:none;">Bidding Wars: How to Compete Without Overextending</a></h3>
+          <p class="blog-excerpt">Ways to compete in a multi-offer situation without going past a budget you can afford.</p>
+          <a href="article-9.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80" alt="Home inspection" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Home Inspection</div>
+          <h3 class="blog-title"><a href="article-12.html" style="color:inherit;text-decoration:none;">Should You Waive a Home Inspection? Risks and Alternatives</a></h3>
+          <p class="blog-excerpt">What a home inspection can reveal, the risks of waiving one, and alternatives in a competitive market.</p>
+          <a href="article-12.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Signing closing papers" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Closing Day</div>
+          <h3 class="blog-title"><a href="article-14.html" style="color:inherit;text-decoration:none;">What to Expect at Closing (and How to Avoid Wire Fraud)</a></h3>
+          <p class="blog-excerpt">What happens at closing, which documents you will sign, and how to avoid wire fraud.</p>
+          <a href="article-14.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Credit report on a desk" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">Credit</div>
+          <h3 class="blog-title"><a href="article-13.html" style="color:inherit;text-decoration:none;">How Your Credit Score Affects Your Mortgage Rate</a></h3>
+          <p class="blog-excerpt">How credit score ranges can change your rate and payment, with a worked example on a $300,000 loan.</p>
+          <a href="article-13.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" alt="Notes on a first home purchase" class="blog-img" loading="lazy" width="600" height="200">
+        <div class="blog-content">
+          <div class="blog-meta">First-Time Buyers</div>
+          <h3 class="blog-title"><a href="article-15.html" style="color:inherit;text-decoration:none;">Common First-Time Home Buyer Mistakes and How to Avoid Them</a></h3>
+          <p class="blog-excerpt">Common first-time buyer mistakes, with numbers showing what each one can cost, and how to avoid them.</p>
+          <a href="article-15.html" class="read-more">Read Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:50px;">
+      <strong>Want to test the numbers yourself?</strong> Try the <a href="index.html#calculator">mortgage calculator</a>, see <a href="how-it-works.html">how the math works</a>, or browse the <a href="faq.html">FAQ</a>. For personal advice, talk to a licensed mortgage professional or a <a href="https://www.hud.gov/findacounselor" target="_blank" rel="noopener">HUD-approved housing counselor</a>. Read our <a href="disclaimer.html">disclaimer</a>.
+    </div>
+  </div>
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -108,14 +305,14 @@
             <span class="logo-mark">S</span>
             <span>Smart<span class="logo-accent">LoanCalc</span></span>
           </a>
-          <p style="color: #94a3b8; font-size: 15px;">Free mortgage tools and educational guides. Not a lender; not financial advice.</p>
+          <p style="color: #94a3b8; font-size: 15px;">Free mortgage payment tools and plain-English guides for home buyers.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="index.html">Calculator</a>
           <a href="how-it-works.html">How It Works</a>
-          <a href="faq.html">FAQ</a>
           <a href="blog.html">Blog</a>
+          <a href="faq.html">FAQ</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -126,16 +323,14 @@
           <h4>Legal</h4>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
+          <a href="disclaimer.html">Disclaimer</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates for education and planning only. Not financial, legal or tax advice.</p>
       </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
