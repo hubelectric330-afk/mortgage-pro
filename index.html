@@ -278,12 +278,53 @@
   </section>
 
   <!-- ========================================== -->
-  <!-- 3000+ WORDS ARTICLE (100% HUMAN TOUCH) -->
+  <!-- ABOUT AND GUIDE CONTENT -->
   <!-- ========================================== -->
+  <section class="calc-section" id="extra-payment">
+    <div class="container">
+      <h2 style="text-align:center;font-size:30px;color:#0f172a;margin-bottom:10px;">Extra Payment Calculator</h2>
+      <p style="text-align:center;color:#64748b;max-width:720px;margin:0 auto 30px;">See how much sooner you could pay off your mortgage, and how much interest you could save, by adding extra principal each month or a one-time lump sum.</p>
+      <div class="calc-grid">
+        <div class="card">
+          <div class="input-group"><label for="exLoan">Current loan balance ($)</label><input type="number" id="exLoan" value="300000" min="0" step="1000"></div>
+          <div class="input-group"><label for="exRate">Interest rate (%)</label><input type="number" id="exRate" value="6.5" min="0" step="0.01"></div>
+          <div class="input-group"><label for="exYears">Years remaining</label><input type="number" id="exYears" value="30" min="1" max="40" step="1"></div>
+          <div class="input-group"><label for="exExtra">Extra principal each month ($)</label><input type="number" id="exExtra" value="200" min="0" step="25"></div>
+          <div class="input-group"><label for="exLump">One-time lump sum ($, optional)</label><input type="number" id="exLump" value="0" min="0" step="500"></div>
+          <div class="input-group"><label for="exLumpMonth">Lump sum paid in month number</label><input type="number" id="exLumpMonth" value="12" min="1" step="1"></div>
+          <button class="btn-outline" id="exUseMain" type="button">Use the numbers from the calculator above</button>
+        </div>
+        <div class="card" aria-live="polite">
+          <h3 style="margin-top:0;color:#0f172a;">Your results</h3>
+          <ul class="breakdown-list" id="exResults"></ul>
+          <p style="font-size:13px;color:#64748b;margin-top:15px;">Estimates for a fixed-rate loan, principal and interest only. Taxes, insurance and PMI are not included. Confirm that your loan has no prepayment penalty and that your servicer applies extra money to principal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="article-section">
     <div class="article-wrap">
       
-      <h2>About SmartLoanCalc</h2><p>SmartLoanCalc is a free mortgage payment calculator. It estimates your monthly principal and interest, property tax, home insurance, PMI and HOA fees, and shows a year-by-year amortization schedule. Everything is calculated in your browser. We never ask for your email or phone number, and the numbers you type are not sent to us.</p><h2>What the calculator includes</h2><ul><li><strong>Principal and interest</strong>: the standard fixed-rate formula M = P·r(1+r)^n / ((1+r)^n − 1), where r is the monthly rate and n the number of payments.</li><li><strong>Taxes, insurance and HOA</strong>: enter annual tax and insurance and monthly HOA dues. These vary a lot by location, so use your own quotes.</li><li><strong>PMI estimate</strong>: when your down payment is under 20%, we add an estimate of 0.5% of the loan per year. Real PMI commonly ranges from about 0.3% to over 1% depending on credit score and down payment.</li><li><strong>Amortization schedule</strong>: how much principal and interest you pay each year and the balance that remains.</li></ul><h2>A worked example</h2><p>A $400,000 loan at 6.5% over 30 years has a principal-and-interest payment of about $2,528. In month one, about $2,167 goes to interest and about $361 to principal. By around year 15 the split is roughly $1,630 interest and $900 principal. Early payments are mostly interest, which is why extra principal payments early in the loan have such a large effect.</p><h2>Why a payment estimate is not the whole cost</h2><p>Listing sites often show only principal and interest. Property tax, insurance, PMI and HOA fees can add hundreds of dollars a month, so enter them before deciding what you can afford. Compare Loan Estimates from at least three lenders; the lender must provide one within three business days of your application.</p><p>Read more in our <a href="how-it-works.html">How It Works</a> page and <a href="faq.html">FAQ</a>. Authoritative sources include the <a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">CFPB Owning a Home guide</a> and <a href="https://www.hud.gov/topics/buying_a_home" rel="noopener">HUD</a>.</p><p><em>This tool is for education and estimates only and is not financial, legal or tax advice. Your lender's figures will differ.</em></p></div>
+      <h2>Extra Payment Calculator: How It Works</h2><p>The Extra Payment Calculator above answers one question: if you send more than your required payment toward principal, how much sooner will the loan be paid off and how much interest will you avoid? Enter your current balance, interest rate and years remaining. Then add an amount you could send each month, a one-time lump sum, or both. The results update instantly. Nothing you type is sent anywhere; the calculation runs in your browser.</p>
+<p>Under the hood the tool works the way a lender’s schedule does. Each month it charges interest on the remaining balance (the balance times the annual rate divided by 12). It subtracts that interest from your payment plus the extra amount, and applies what is left to principal. It repeats until the balance reaches zero. Because extra principal lowers the balance that interest is charged on, every later month has less interest and more principal, so the effect compounds.</p>
+<h2>How to Use It Step by Step</h2>
+<ul><li><strong>Start with your real numbers.</strong> Use the balance shown on your latest statement, not the original loan amount. If you have not bought yet, press the button to copy the price, down payment, rate and term from the main calculator.</li><li><strong>Check the rate and years remaining.</strong> On a fixed-rate loan, the remaining term is the original term minus the years you have paid. A loan with 24 years left should be entered as 24.</li><li><strong>Try a realistic monthly extra.</strong> Choose an amount you can keep paying even in a tight month. Try several values to see how sensitive the result is.</li><li><strong>Add a lump sum if you expect one.</strong> A bonus, tax refund or inheritance can be entered with the month number when you expect to pay it. Month 1 is your next payment.</li><li><strong>Read all four results.</strong> Time saved, interest saved, total extra money paid in and the new payoff date together tell the full story.</li></ul>
+<h2>A Worked Example</h2><p>Take a $300,000 loan at 6.5% with 30 years remaining. The required principal-and-interest payment is about $1,896 a month, and over the full 30 years the loan costs about $382,633 in interest. Here is what different choices do, using the same formula as the tool.</p>
+<table><thead><tr><th>Choice</th><th>New payoff time</th><th>Interest paid</th><th>Interest saved</th></tr></thead><tbody>
+<tr><td>No extra payments</td><td>30 years 0 months</td><td>$382,633</td><td>$0</td></tr>
+<tr><td>Extra $100 a month</td><td>26 years 0 months</td><td>$321,639</td><td>$60,995</td></tr>
+<tr><td>Extra $200 a month</td><td>23 years 1 months</td><td>$279,185</td><td>$103,449</td></tr>
+<tr><td>Extra $500 a month</td><td>17 years 6 months</td><td>$202,874</td><td>$179,759</td></tr>
+<tr><td>One-time $10,000 in month 12</td><td>27 years 5 months</td><td>$332,404</td><td>$50,230</td></tr>
+<tr><td>$200 a month plus $10,000 in month 12</td><td>21 years 6 months</td><td>$249,481</td><td>$133,153</td></tr></tbody></table>
+<p>The pattern is worth noticing. Doubling the extra payment from $100 to $200 does not merely double the benefit, because each extra dollar shortens the loan and removes later interest too. A single $10,000 payment made in the first year saves a surprising amount, because it prevents interest on that money for decades. The same $10,000 paid late in the loan saves far less.</p>
+<h2>What the Results Mean</h2><p><strong>Time saved</strong> is the number of payments you no longer make. It also tells you the new date when you could be free of the mortgage payment, which matters for retirement planning. <strong>Interest saved</strong> is the difference between the interest you would pay on the original schedule and on the faster one. It is a real saving, but remember that you are also paying in the extra money, which is why the calculator shows the total extra you contribute. Compare the two numbers: interest saved is usually larger than the extra principal in early years, which is why prepaying early is so powerful.</p>
+<h2>Monthly Extra vs Lump Sum</h2><p>Both work, and the best choice depends on cash flow. A small monthly amount is easy to automate and builds a habit; it also starts reducing the balance immediately. A lump sum is flexible, because you can pay it when you have a windfall without raising your monthly commitment, and an early lump sum can be very effective. Many borrowers combine both: a modest recurring amount and occasional lump sums. If your income varies, a lump-sum approach preserves flexibility, since a monthly extra can feel like an obligation in a slow month even though it is optional.</p>
+<h2>Before You Prepay: A Checklist</h2><ul><li><strong>Check for a prepayment penalty.</strong> Many home loans have none, but read your note and Closing Disclosure.</li><li><strong>Make sure it goes to principal.</strong> Some servicers apply extra money to the next scheduled payment unless you mark it as principal-only. Check your next statement.</li><li><strong>Build an emergency fund first.</strong> Money paid into a mortgage is hard to get back quickly.</li><li><strong>Pay down higher-rate debt.</strong> If you carry credit card balances at rates well above your mortgage rate, those usually come first.</li><li><strong>Capture any employer retirement match.</strong> A match is often an immediate return that prepaying cannot beat.</li></ul>
+<h2>When Prepaying May Not Be the Best Use of Cash</h2><p>Prepaying earns a certain return equal to your loan rate. If your rate is low, you may prefer to keep cash or invest it, accepting that investment returns are not guaranteed and may be taxed. Your comfort with risk, your time horizon and your other goals all matter. If you may move in a few years, extra payments build equity that you only get back when you sell, and selling has its own costs. If your job is uncertain, liquidity matters more. There is no single right answer, and this calculator is meant to make the trade-off visible, not to tell you what to do.</p>
+<h2>Limits and Assumptions</h2><p>The tool assumes a fixed-rate loan with level monthly payments, interest calculated monthly on the declining balance, and extra money applied to principal on the payment date. It does not include escrow, PMI, late fees or rate changes. Adjustable-rate loans change their payment when the rate resets, so the results are only a rough guide for them. Your servicer’s own figures are the final word, and small differences can arise from how payments are dated and rounded. Treat the results as estimates for planning.</p>
+<h2>Common Questions About Extra Payments</h2><ul><li><strong>Will an extra payment lower my monthly bill?</strong> No. Your required payment stays the same; the loan simply ends sooner unless you recast or refinance.</li><li><strong>Is it better to pay extra every month or once a year?</strong> Paying monthly is slightly more effective because the balance falls earlier, but a yearly payment still helps a great deal.</li><li><strong>Can I stop whenever I want?</strong> Yes. Extra payments are optional, and you only need to keep the required payment current.</li><li><strong>Does the calculator include taxes and insurance?</strong> No. It models principal and interest only, which is the part that extra payments affect.</li><li><strong>What if my loan is adjustable?</strong> Use the current rate for a rough estimate, and recheck after each reset.</li></ul><p>Take a few minutes to try different combinations in the calculator. Seeing the numbers for your own loan is the best way to decide whether prepaying fits your goals and your budget.</p><h2>Related Guides</h2><p>For a deeper look at the decision, read <a href="article-10.html">Should You Pay Extra on Your Mortgage?</a>, see how interest and principal change over time in <a href="article-7.html">How Amortization Schedules Work</a>, and compare terms in <a href="article-2.html">15-Year vs 30-Year Mortgages Compared</a>. If you pay PMI, extra principal can also help you reach the cancellation threshold sooner; see <a href="article-3.html">PMI: What It Costs and How to Remove It</a>.</p><h2>About SmartLoanCalc</h2><p>SmartLoanCalc is a free mortgage payment calculator. It estimates your monthly principal and interest, property tax, home insurance, PMI and HOA fees, and shows a year-by-year amortization schedule. Everything is calculated in your browser. We never ask for your email or phone number, and the numbers you type are not sent to us.</p><h2>What the calculator includes</h2><ul><li><strong>Principal and interest</strong>: the standard fixed-rate formula M = P·r(1+r)^n / ((1+r)^n − 1), where r is the monthly rate and n the number of payments.</li><li><strong>Taxes, insurance and HOA</strong>: enter annual tax and insurance and monthly HOA dues. These vary a lot by location, so use your own quotes.</li><li><strong>PMI estimate</strong>: when your down payment is under 20%, we add an estimate of 0.5% of the loan per year. Real PMI commonly ranges from about 0.3% to over 1% depending on credit score and down payment.</li><li><strong>Amortization schedule</strong>: how much principal and interest you pay each year and the balance that remains.</li></ul><h2>A worked example</h2><p>A $400,000 loan at 6.5% over 30 years has a principal-and-interest payment of about $2,528. In month one, about $2,167 goes to interest and about $361 to principal. By around year 15 the split is roughly $1,630 interest and $900 principal. Early payments are mostly interest, which is why extra principal payments early in the loan have such a large effect.</p><h2>Why a payment estimate is not the whole cost</h2><p>Listing sites often show only principal and interest. Property tax, insurance, PMI and HOA fees can add hundreds of dollars a month, so enter them before deciding what you can afford. Compare Loan Estimates from at least three lenders; the lender must provide one within three business days of your application.</p><p>Read more in our <a href="how-it-works.html">How It Works</a> page and <a href="faq.html">FAQ</a>. Authoritative sources include the <a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">CFPB Owning a Home guide</a> and <a href="https://www.hud.gov/topics/buying_a_home" rel="noopener">HUD</a>.</p><p><em>This tool is for education and estimates only and is not financial, legal or tax advice. Your lender's figures will differ.</em></p></div>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -527,5 +568,49 @@
     // Initial Calculation
     calculate();
   </script>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var num=function(i){var v=parseFloat($(i).value);return isNaN(v)?0:v};
+  var fmt=function(x){return '$'+Math.round(x).toLocaleString('en-US')};
+  var yrs=function(k){return Math.floor(k/12)+' years '+(k%12)+' months'};
+  function pmt(L,r,n){return r>0?L*r/(1-Math.pow(1+r,-n)):L/n}
+  function sim(L,r,n,extra,lump,lm){
+    var pay=pmt(L,r,n),B=L,k=0,I=0;
+    while(B>0.005&&k<2*n+12){
+      var i=B*r,q=Math.min(pay+extra-i,B);B-=q;I+=i;k++;
+      if(k===lm&&lump>0)B=Math.max(0,B-lump);
+    }
+    return {pay:pay,k:k,I:I};
+  }
+  function run(){
+    var L=num('exLoan'),r=num('exRate')/100/12,n=Math.round(num('exYears')*12),
+        extra=Math.max(0,num('exExtra')),lump=Math.max(0,num('exLump')),lm=Math.max(1,Math.round(num('exLumpMonth')));
+    var out=$('exResults');
+    if(L<=0||n<=0){out.innerHTML='<li>Enter a loan balance and years remaining.</li>';return}
+    var a=sim(L,r,n,0,0,lm),b=sim(L,r,n,extra,lump,lm);
+    var paidExtra=extra*b.k+(lump>0&&b.k>=lm?lump:0);
+    out.innerHTML=
+      '<li>Regular monthly principal and interest <strong>'+fmt(a.pay)+'</strong></li>'+
+      '<li>Payoff time without extra payments <strong>'+yrs(a.k)+'</strong></li>'+
+      '<li>Payoff time with extra payments <strong>'+yrs(b.k)+'</strong></li>'+
+      '<li>Time saved <strong>'+yrs(a.k-b.k)+'</strong></li>'+
+      '<li>Interest without extra payments <strong>'+fmt(a.I)+'</strong></li>'+
+      '<li>Interest with extra payments <strong>'+fmt(b.I)+'</strong></li>'+
+      '<li>Interest saved <strong>'+fmt(a.I-b.I)+'</strong></li>'+
+      '<li>Total extra money you pay in <strong>'+fmt(paidExtra)+'</strong></li>';
+  }
+  ['exLoan','exRate','exYears','exExtra','exLump','exLumpMonth'].forEach(function(i){$(i).addEventListener('input',run)});
+  $('exUseMain').addEventListener('click',function(){
+    var loan=(parseFloat($('homePrice').value)||0)-(parseFloat($('downPayment').value)||0);
+    $('exLoan').value=Math.max(0,Math.round(loan));
+    $('exRate').value=parseFloat($('interestRate').value)||0;
+    $('exYears').value=parseFloat($('loanTerm').value)||30;
+    run();
+  });
+  run();
+})();
+</script>
+
 </body>
 </html>

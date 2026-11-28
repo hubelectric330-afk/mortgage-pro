@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escrow Accounts Explained | SmartLoanCalc</title><link rel="canonical" href="https://smartloancalc.online/article-11.html">
+  <meta name="description" content="How mortgage escrow accounts work and why a fixed-rate payment can still change.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* BASE STYLES */
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; background: #f8fafc; line-height: 1.9; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .logo-mark { background: #3b82f6; color: #fff; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .logo-accent { color: #3b82f6; }
+    .nav { display: flex; gap: 5px; align-items: center; }
+    .nav a { text-decoration: none; color: #475569; padding: 8px 12px; font-weight: 600; font-size: 14px; border-radius: 6px; transition: 0.2s; }
+    .nav a:hover, .nav a.active { color: #3b82f6; background: #eff6ff; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; border: none; font-size: 14px; transition: 0.2s; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #1e293b; }
+
+    /* ARTICLE HEADER */
+    .article-header { background: #fff; padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+    .article-header h1 { font-size: 42px; color: #0f172a; margin: 0 0 15px; font-weight: 800; line-height: 1.2; }
+    .article-meta { color: #64748b; font-size: 15px; font-weight: 600; }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 850px; margin: 0 auto; padding: 50px 20px; font-size: 18.5px; color: #334155; }
+    .article-body h2 { font-size: 32px; color: #0f172a; margin-top: 50px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    .article-body h3 { font-size: 24px; color: #1e293b; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+    .article-body p { margin-bottom: 25px; }
+    .article-body ul, .article-body ol { margin-bottom: 25px; padding-left: 25px; }
+    .article-body li { margin-bottom: 12px; }
+    
+    .article-img { width: 100%; height: auto; border-radius: 12px; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .callout { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; font-size: 17px; font-style: italic; color: #1e3a8a; }
+    .warning { background: #fef2f2; border-left: 5px solid #ef4444; padding: 25px; border-radius: 0 8px 8px 0; margin: 35px 0; color: #7f1d1d; }
+
+    /* TABLE STYLE */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 16px; }
+    .compare-table th, .compare-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+    .compare-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .compare-table tr:hover { background: #f8fafc; }
+
+    /* FOOTER */
+    .site-footer { background: #1e293b; color: #94a3b8; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+    .footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+    .footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 15px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; font-size: 14px; }
+
+    @media (max-width: 900px) { 
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: block; }
+      .header-actions .btn { display: none; } 
+      .nav { display: none; flex-direction: column; width: 100%; background: #fff; position: absolute; top: 70px; left: 0; padding: 20px; border-bottom: 1px solid #e2e8f0; }
+      .nav.active { display: flex; }
+      .nav a { width: 100%; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+      .article-header h1 { font-size: 32px; }
+      .article-body h2 { font-size: 26px; }
+    }
+  </style>
+<style>.article-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}.article-body th,.article-body td{padding:10px 12px;border-bottom:1px solid #e2e8f0;text-align:left}.article-body th{background:#f8fafc}</style></head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Smart<span class="logo-accent">LoanCalc</span></span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Calculator</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#calculator" class="btn btn-primary">Calculate Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <h1>Escrow Accounts Explained</h1><div class="article-meta">By SmartLoanCalc | Last reviewed November 2026 | 7 min read</div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body"><h2>What an escrow account is</h2><p>An escrow account, sometimes called an impound account, is a holding account run by your mortgage servicer. Along with your principal and interest, you pay one-twelfth of your estimated yearly property tax and homeowners insurance each month. The servicer collects the money and pays those bills when they are due. The goal is to make sure the taxes and insurance that protect the lender’s collateral are always paid, and to spread large annual bills into small monthly amounts.</p><p>Escrow is separate from the loan balance. The money in it does not reduce what you owe. It is a pool for specific bills, and it should rise and fall through the year as deposits come in and bills go out.</p><h2>When escrow is required</h2><p>Rules depend on the loan type and the down payment. Government-backed loans such as FHA generally require escrow. Conventional lenders commonly require it when the down payment is under 20%, and may require it in other cases or for higher-priced loans. Some lenders allow you to waive escrow if you qualify, often for a fee or a slightly higher rate. If you do not have escrow, you must pay tax and insurance bills yourself, so you need to budget for large lump sums. Ask the lender what applies to your loan.</p><h2>What goes into the account</h2><ul><li><strong>Property taxes.</strong> Billed by your local government, often in installments.</li><li><strong>Homeowners insurance.</strong> The yearly premium for the policy the lender requires.</li><li><strong>Mortgage insurance.</strong> PMI or FHA premiums are usually part of the monthly payment, not the escrow cushion, though they may appear on the same statement.</li><li><strong>Flood insurance or HOA dues.</strong> Flood premiums can be escrowed in required areas. HOA dues are normally paid directly.</li></ul><h2>Why your payment can change</h2><p>On a fixed-rate loan, principal and interest never change, but taxes and insurance can. The table shows a $280,000 loan at 6.5% over 30 years. Property tax rises from $3,850 to $4,450 a year and insurance from $1,600 to $1,900.</p><table><thead><tr><th>Item</th><th>Year 1 monthly</th><th>After increases</th></tr></thead><tbody><tr><td>Principal and interest</td><td>$1,770</td><td>$1,770</td></tr><tr><td>Property tax</td><td>$321</td><td>$371</td></tr><tr><td>Homeowners insurance</td><td>$133</td><td>$158</td></tr><tr><td>Total monthly payment</td><td>$2,224</td><td>$2,299</td></tr></tbody></table><p>The payment rises by about $75 a month even though the loan has not changed. Rising insurance premiums and reassessments are common reasons payments go up. Watch for them in your yearly statement.</p><h2>The annual escrow analysis</h2><p>Servicers review the account once a year. They compare what they collected with what they paid and project the next year’s bills. Federal rules let the servicer keep a cushion of up to about two months of escrow payments to cover surprises. If the account holds more than needed, you may receive a refund of the surplus, generally when it is at least $50. If it is short, the servicer can raise your monthly escrow amount, and you may be offered a choice between paying the shortage at once or spreading it over many months.</p><h2>Shortages and surpluses</h2><ul><li><strong>Shortage.</strong> The account is short of what is needed. Ask for the options in writing: lump sum or spread over 12 months.</li><li><strong>Deficiency.</strong> The balance went negative because the servicer paid a bill you had not yet funded.</li><li><strong>Surplus.</strong> More money than needed. Ask about the refund timing.</li></ul><p>Review the analysis line by line. Check the tax amount against your county bill and the insurance amount against your policy declaration page.</p><h2>What you can do to control the cost</h2><ul><li>Shop homeowners insurance each year and give the servicer the new premium and effective date so the escrow amount updates.</li><li>Review your property tax assessment notice and ask your local assessor about appeals if the value looks too high compared with similar homes.</li><li>Ask whether exemptions apply, such as those for primary residences or certain owners.</li><li>Pay attention to the escrow statement, not only the total payment.</li><li>Keep a small cash cushion for increases.</li></ul><h2>If the servicer makes a mistake</h2><p>Errors do happen: a bill paid late, a wrong tax amount, a lapse in insurance because the new premium was not recorded. If you suspect one, contact the servicer in writing, keep copies and ask for a corrected analysis. If a late payment caused a penalty because of the servicer’s error, ask that it be waived. If the servicer does not respond, you can file a complaint with the Consumer Financial Protection Bureau.</p><h2>Dropping escrow later</h2><p>Many lenders will let you remove the escrow account once you have enough equity, often around 20%, and a good payment record. You may pay a fee. Think about discipline: with escrow gone, you must save for tax and insurance bills yourself. If you are unsure, escrow protects you from missing a bill.</p><h2>Escrow during closing</h2><p>At closing you typically fund the initial escrow deposit, which can include several months of tax and insurance. This is part of your closing costs (see <a href="article-4.html">our closing costs guide</a>). Ask your lender how the initial amount was calculated, since it depends on when tax bills are due.</p><h2>A short checklist</h2><ul><li>Know whether your loan has escrow.</li><li>Find the tax and insurance amounts on your annual analysis.</li><li>Compare them with the real bills.</li><li>Shop insurance each year.</li><li>Ask about shortage options before you pay.</li><li>Plan for payment increases when you set your budget with the <a href="index.html">calculator</a>.</li></ul><h2>A worked example of the cushion</h2><p>Using the earlier figures, yearly tax and insurance of $5,450 come to about $454 a month. A two-month cushion would be about $908. In the first year the servicer collects the initial deposit at closing, then $454 each month, and pays the tax and insurance bills as they come due. The balance rises and falls as bills are paid, and the servicer must keep it from dropping below the cushion limit. If a tax bill is larger than projected, the cushion absorbs it first. If the cushion is used up, you face a shortage at the next analysis.</p><h2>Escrow versus paying directly</h2><ul><li><strong>Escrow pros.</strong> Automatic payments, smaller monthly amounts, lower risk of missing a bill and a lapse in coverage.</li><li><strong>Escrow cons.</strong> Money sits with the servicer, payments can change, and errors can occur.</li><li><strong>Paying directly pros.</strong> You control the timing and keep the cash until the bill is due.</li><li><strong>Paying directly cons.</strong> Large bills, the risk of forgetting, and possibly a fee or higher rate to waive escrow.</li></ul><p>Choose based on discipline and cash flow. Many borrowers prefer escrow for predictability even when they could waive it.</p><h2>Common questions</h2><ul><li><strong>Does escrow earn interest?</strong> It depends on state law and your loan. Many accounts do not.</li><li><strong>What happens to the balance if I sell or pay off the loan?</strong> The servicer refunds the remaining balance, usually within a few weeks of payoff.</li><li><strong>Can I change my insurance company?</strong> Yes. Send the servicer the new policy details and make sure the old policy is not paid twice.</li><li><strong>Why did my payment change when my rate did not?</strong> Look at the escrow section of your statement.</li><li><strong>Can the servicer require escrow later?</strong> Some loan terms allow it, for example if you miss tax or insurance payments.</li></ul><h2>Mistakes to avoid</h2><ul><li>Assuming the payment is fixed because the rate is fixed.</li><li>Ignoring the annual analysis.</li><li>Letting insurance lapse or switching without notifying the servicer.</li><li>Not budgeting for tax reassessments after buying.</li><li>Paying a tax bill yourself when the servicer also paid it. If that happens, ask for a refund.</li></ul><p>Understanding escrow turns the largest surprise in homeownership into a predictable line in your budget.</p><h2>Making escrow work for your budget</h2><p>Treat the escrow portion of your payment as a number that will probably rise over time, not a constant. When you plan your budget, assume taxes and insurance will increase a few percent each year, and keep a small buffer so an escrow adjustment does not strain your finances. When a new analysis arrives, read it the day it comes, compare it with your actual bills and ask questions while there is still time to shop for cheaper insurance or appeal a tax value. A few minutes of attention each year can prevent surprises and keep more of your money where it belongs.</p><h2>Sources and related guides</h2><ul><li><a href="https://www.consumerfinance.gov/owning-a-home/" rel="noopener">CFPB: Owning a Home</a></li><li><a href="https://www.hud.gov/topics/buying_a_home" rel="noopener">HUD: Buying a Home</a></li><li><a href="article-4.html">Closing Costs: What to Budget Beyond the Down Payment</a></li><li><a href="article-5.html">How Much House Can You Afford?</a></li></ul><p><em>This article is educational and is not financial, legal or tax advice. Examples use rounded, illustrative figures; your rates, costs and rules will differ. Check current requirements with your lender. <a href="about.html">About us</a>.</em></p></article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 15px;">
+            <span class="logo-mark">S</span>
+            <span>Smart<span class="logo-accent">LoanCalc</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 15px;">Free, accurate mortgage tools to help you make confident home-buying decisions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html">Calculator</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SmartLoanCalc. All rights reserved. Estimates only. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
